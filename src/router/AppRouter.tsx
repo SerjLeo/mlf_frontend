@@ -1,12 +1,14 @@
 import React from 'react';
 import {Route, Routes} from 'react-router-dom';
 import PrivateRoute from "./PrivateRoute";
-import Login from "../pages/Login/Login";
-import Register from "../pages/Register/Register";
+
 import Dashboard from "../pages/Dashboard/Dashboard";
 import NotFound from "../pages/NotFound/NotFound";
 import MainLayout from "../layouts/MainLayout";
-import Landing from "../pages/Landing/Landing";
+
+const Register = React.lazy(() => import('../pages/Register/Register'));
+const Login = React.lazy(() => import('../pages/Login/Login'));
+const Landing = React.lazy(() => import('../pages/Landing/Landing'));
 
 const AppRouter = () => {
     const globalRoutes = () => {
