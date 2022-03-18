@@ -1,23 +1,40 @@
 import React from 'react';
 import styles from './Header.module.scss'
-import {Button} from "@mui/material";
+import {Button, IconButton} from "@mui/material";
 import {Link} from "react-router-dom";
 import LoginIcon from '@mui/icons-material/Login';
 import PersonIcon from '@mui/icons-material/Person';
+import useWindowWidth from "../../hooks/useWindowWidth";
 
 const Header = () => {
+    const windowWidth = useWindowWidth()
+
+    console.log('render')
+
     const authLinks = () => {
         return (
             <div className={styles.header__buttons}>
                 <Link to="/register">
-                    <Button endIcon={<LoginIcon />}>
-                        Register
-                    </Button>
+                    {
+                        windowWidth > 768
+                            ? <Button endIcon={<PersonIcon />}>
+                                <span className={styles.header__button_text}>Register</span>
+                            </Button>
+                            : <IconButton>
+                                <PersonIcon />
+                            </IconButton>
+                    }
                 </Link>
                 <Link to="/login">
-                    <Button endIcon={<PersonIcon />}>
-                        Login
-                    </Button>
+                    {
+                        windowWidth > 768
+                            ? <Button endIcon={<LoginIcon />}>
+                                <span className={styles.header__button_text}>Login</span>
+                            </Button>
+                            : <IconButton>
+                                <LoginIcon />
+                            </IconButton>
+                    }
                 </Link>
             </div>
         )
@@ -25,7 +42,8 @@ const Header = () => {
 
     return (
         <div className={styles.header}>
-            <div>MLF</div>
+            <div className={styles.header__text}>My Local Financier</div>
+            <div className={styles.header__text_mobile}>MLF</div>
             {authLinks()}
         </div>
     );

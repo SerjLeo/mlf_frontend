@@ -1,15 +1,41 @@
 .header {
   width: 100%;
-  height: 50px;
   background-color: #fff;
   display: flex;
-  padding: 0 24px;
+  padding: 12px 24px;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 3px 10px 0 rgba(34, 60, 80, 0.2);
 }
 
+.header__text {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 30px;
+  font-family: Rye, sans-serif;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.header__text_mobile {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 30px;
+  font-family: Rye, sans-serif;
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+}
+
 .header__buttons {
   display: flex;
   gap: 8px;
+}
+
+.header__button_text {
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
