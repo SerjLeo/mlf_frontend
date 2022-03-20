@@ -1,0 +1,30 @@
+.form_wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form_container {
+  padding: 24px;
+  border: 1px solid #050505;
+  border-radius: 4px;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.form__title {
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.form__redirect {
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

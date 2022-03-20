@@ -1,6 +1,6 @@
 import {useState, ChangeEvent, FormEventHandler} from "react";
 
-export default function <T extends Record<string, unknown>, K extends keyof T>(initialValue: T) {
+export default function useFormInput<T extends Record<string, unknown>, K extends keyof T>(initialValue: T) {
     const [form, setForm] = useState(initialValue)
 
     const getFormFieldProps = (fieldName: K) => {

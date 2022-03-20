@@ -7,4 +7,6 @@
 .app__content {
   flex-grow: 1;
   padding: 24px 48px;
+  display: flex;
+  flex-direction: column;
 }
