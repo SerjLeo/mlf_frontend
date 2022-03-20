@@ -9,8 +9,6 @@ import useWindowWidth from "../../hooks/useWindowWidth";
 const Header = () => {
     const windowWidth = useWindowWidth()
 
-    console.log('render')
-
     const authLinks = () => {
         return (
             <div className={styles.header__buttons}>
@@ -42,8 +40,7 @@ const Header = () => {
 
     return (
         <div className={styles.header}>
-            <div className={styles.header__text}>My Local Financier</div>
-            <div className={styles.header__text_mobile}>MLF</div>
+            <div className={styles.header__text}>{windowWidth > 768 ? 'My Local Financier' : 'MLF'}</div>
             {authLinks()}
         </div>
     );
