@@ -13,20 +13,6 @@
   font-size: 28px;
   line-height: 30px;
   font-family: Rye, sans-serif;
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-}
-
-.header__text_mobile {
-  font-weight: 700;
-  font-size: 28px;
-  line-height: 30px;
-  font-family: Rye, sans-serif;
-  display: none;
-  @media screen and (max-width: 768px) {
-    display: block;
-  }
 }
 
 .header__buttons {
