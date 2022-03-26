@@ -22,7 +22,7 @@ const Login = () => {
                     <TextField label='email' {...getFormFieldProps('email')} required/>
                     <TextField label='password' {...getFormFieldProps('password')} required/>
                     <Button type="submit">Login</Button>
-                    <Link className={styles.form__redirect} to="/register">Did not register yet? Register!</Link>
+                    <Link className={styles.form__redirect} to="/restore-password">Forgot password?</Link>
                 </form>
             </div>
         </div>

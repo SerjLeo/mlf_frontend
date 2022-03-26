@@ -6,9 +6,11 @@ import Dashboard from "../pages/Dashboard/Dashboard";
 import NotFound from "../pages/NotFound/NotFound";
 import MainLayout from "../layouts/MainLayout";
 
-const Register = React.lazy(() => import('../pages/Register/Register'));
-const Login = React.lazy(() => import('../pages/Login/Login'));
+const Register = React.lazy(() => import('../pages/Auth/Register'));
+const Login = React.lazy(() => import('../pages/Auth/Login'));
 const Landing = React.lazy(() => import('../pages/Landing/Landing'));
+const FastSignUp = React.lazy(() => import('../pages/Auth/FastSignUp'));
+const RestorePassword = React.lazy(() => import('../pages/Auth/RestorePassword'));
 
 const AppRouter = () => {
     const globalRoutes = () => {
@@ -20,6 +22,8 @@ const AppRouter = () => {
                 <Route index element={<Landing/>} />
                 <Route path="login" element={<Login/>}/>
                 <Route path="register" element={<Register/>}/>
+                <Route path="email-signup" element={<FastSignUp/>}/>
+                <Route path="restore-password" element={<RestorePassword/>}/>
                 <Route
                     path="*"
                     element={<NotFound/>}

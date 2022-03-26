@@ -1,14 +1,14 @@
-import React, {useEffect} from 'react';
-import ApiService from "../../api/ApiService";
+import React from 'react';
+import {useSelector} from "react-redux";
 
 const Landing = () => {
-    useEffect(() => {
-        ApiService.apiRequest('/ping')
-    }, [])
+
+    const counter = useSelector((state: any) => state.user.counter)
 
     return (
         <div>
             Here is Landing
+            {counter}
         </div>
     );
 };
