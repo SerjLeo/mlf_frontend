@@ -1,10 +1,11 @@
 import React from 'react';
 import {Route, Routes} from 'react-router-dom';
-import PrivateRoute from "./PrivateRoute";
+import GuardedRoute from "./GuardedRoute";
 
 import Dashboard from "../pages/Dashboard/Dashboard";
 import NotFound from "../pages/NotFound/NotFound";
 import MainLayout from "../layouts/MainLayout";
+import useTypedSelector from "../hooks/useTypedSelector";
 
 const Register = React.lazy(() => import('../pages/Auth/Register'));
 const Login = React.lazy(() => import('../pages/Auth/Login'));
@@ -13,6 +14,7 @@ const FastSignUp = React.lazy(() => import('../pages/Auth/FastSignUp'));
 const RestorePassword = React.lazy(() => import('../pages/Auth/RestorePassword'));
 
 const AppRouter = () => {
+    const {isAuth} = useTypedSelector(state => state.user)
     const globalRoutes = () => {
         return (
             <Route
@@ -20,10 +22,22 @@ const AppRouter = () => {
                 element={<MainLayout/>}
             >
                 <Route index element={<Landing/>} />
-                <Route path="login" element={<Login/>}/>
-                <Route path="register" element={<Register/>}/>
-                <Route path="email-signup" element={<FastSignUp/>}/>
-                <Route path="restore-password" element={<RestorePassword/>}/>
+                <Route path="login" element={
+                    <GuardedRoute isAuth={isAuth} permission="notAuth">
+                        <Login/>
+                    </GuardedRoute>}/>
+                <Route path="register" element={
+                    <GuardedRoute isAuth={isAuth} permission="notAuth">
+                        <Register/>
+                    </GuardedRoute>}/>
+                <Route path="email-signup" element={
+                    <GuardedRoute isAuth={isAuth} permission="notAuth">
+                        <FastSignUp/>
+                    </GuardedRoute>}/>
+                <Route path="restore-password" element={
+                    <GuardedRoute isAuth={isAuth} permission="notAuth">
+                        <RestorePassword/>
+                    </GuardedRoute>}/>
                 <Route
                     path="*"
                     element={<NotFound/>}
@@ -34,11 +48,16 @@ const AppRouter = () => {
     return (
         <Routes>
             {globalRoutes()}
-            <Route path="/" element={
-                <PrivateRoute>
-                    <Dashboard/>
-                </PrivateRoute>
-            }/>
+            <Route
+                path="/"
+                element={<MainLayout/>}
+            >
+                <Route path="/dashboard" element={
+                    <GuardedRoute isAuth={isAuth}>
+                        <Dashboard/>
+                    </GuardedRoute>
+                }/>
+            </Route>
         </Routes>
     );
 };
