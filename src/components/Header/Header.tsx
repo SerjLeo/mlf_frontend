@@ -3,13 +3,18 @@ import styles from './Header.module.scss'
 import {Button, IconButton} from "@mui/material";
 import {Link} from "react-router-dom";
 import LoginIcon from '@mui/icons-material/Login';
+import LogoutIcon from '@mui/icons-material/Logout';
 import PersonIcon from '@mui/icons-material/Person';
 import useWindowWidth from "../../hooks/useWindowWidth";
+import useTypedSelector from "../../hooks/useTypedSelector";
+import useActions from "../../hooks/useActions";
 
 const Header = () => {
+    const {isAuth} = useTypedSelector(state => state.user)
+    const {signOut} = useActions()
     const windowWidth = useWindowWidth()
 
-    const authLinks = () => {
+    const nonAuthLinks = () => {
         return (
             <div className={styles.header__buttons}>
                 <Link to="/register">
@@ -38,10 +43,39 @@ const Header = () => {
         )
     }
 
+    const authLinks = () => {
+        return (
+            <div className={styles.header__buttons}>
+                <Link to="/profile">
+                    {
+                        windowWidth > 768
+                            ? <Button endIcon={<PersonIcon />}>
+                                <span className={styles.header__button_text}>Profile</span>
+                            </Button>
+                            : <IconButton>
+                                <PersonIcon />
+                            </IconButton>
+                    }
+                </Link>
+                <div>
+                    {
+                        windowWidth > 768
+                            ? <Button endIcon={<LoginIcon />} onClick={signOut}>
+                                <span className={styles.header__button_text}>Logout</span>
+                            </Button>
+                            : <IconButton onClick={signOut}>
+                                <LogoutIcon />
+                            </IconButton>
+                    }
+                </div>
+            </div>
+        )
+    }
+
     return (
         <div className={styles.header}>
-            <div className={styles.header__text}>{windowWidth > 768 ? 'My Local Financier' : 'MLF'}</div>
-            {authLinks()}
+            <Link className={styles.header__text} to="/">{windowWidth > 768 ? 'My Local Financier' : 'MLF'}</Link>
+            {isAuth ? authLinks() : nonAuthLinks()}
         </div>
     );
 };

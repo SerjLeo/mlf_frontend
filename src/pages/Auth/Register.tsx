@@ -1,10 +1,13 @@
 import React from 'react';
 import useFormInput from "../../hooks/useFormInput";
 import {Button, TextField} from "@mui/material";
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import styles from '../../assets/styles/Pages/Form.module.scss'
+import useTypedSelector from "../../hooks/useTypedSelector";
 
 const Register = React.memo(() => {
+    const {loading} = useTypedSelector(state => state.user)
+
     const {getFormFieldProps, onFormSubmit} = useFormInput({
         name: '',
         email: '',
@@ -23,7 +26,7 @@ const Register = React.memo(() => {
                     <TextField label='name' {...getFormFieldProps('name')} required/>
                     <TextField label='email' {...getFormFieldProps('email')} required/>
                     <TextField label='password' {...getFormFieldProps('password')} required/>
-                    <Button type="submit">Register</Button>
+                    <Button type="submit" disabled={loading}>Register</Button>
                     <Link className={styles.form__redirect} to="/login">Already registered? Login!</Link>
                 </form>
             </div>
