@@ -10,6 +10,7 @@ export type UserState = {
     user: any
     isAuth: boolean
     loading: boolean
+    initialLoading: boolean
     error: string
 }
 

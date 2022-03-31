@@ -6,38 +6,33 @@ import Dashboard from "../pages/Dashboard/Dashboard";
 import NotFound from "../pages/NotFound/NotFound";
 import MainLayout from "../layouts/MainLayout";
 import useTypedSelector from "../hooks/useTypedSelector";
+import Spinner from "../components/Spinner/Spinner";
 
 const Register = React.lazy(() => import('../pages/Auth/Register'));
 const Login = React.lazy(() => import('../pages/Auth/Login'));
 const Landing = React.lazy(() => import('../pages/Landing/Landing'));
 const FastSignUp = React.lazy(() => import('../pages/Auth/FastSignUp'));
 const RestorePassword = React.lazy(() => import('../pages/Auth/RestorePassword'));
+const CategoriesList = React.lazy(() => import('../pages/CategoriesList/CategoriesList'));
+const CategoryPage = React.lazy(() => import('../pages/CategoryPage/CategoryPage'));
 
 const AppRouter = () => {
-    const {isAuth} = useTypedSelector(state => state.user)
+    const {isAuth, initialLoading} = useTypedSelector(state => state.user)
+
+    if (initialLoading) return (
+        <Routes>
+            <Route path="*" element={<MainLayout/>}>
+                <Route index element={<Spinner/>}/>
+            </Route>
+        </Routes>
+    )
+
     const globalRoutes = () => {
         return (
             <Route
                 path="/"
                 element={<MainLayout/>}
             >
-                <Route index element={<Landing/>} />
-                <Route path="login" element={
-                    <GuardedRoute isAuth={isAuth} permission="notAuth">
-                        <Login/>
-                    </GuardedRoute>}/>
-                <Route path="register" element={
-                    <GuardedRoute isAuth={isAuth} permission="notAuth">
-                        <Register/>
-                    </GuardedRoute>}/>
-                <Route path="email-signup" element={
-                    <GuardedRoute isAuth={isAuth} permission="notAuth">
-                        <FastSignUp/>
-                    </GuardedRoute>}/>
-                <Route path="restore-password" element={
-                    <GuardedRoute isAuth={isAuth} permission="notAuth">
-                        <RestorePassword/>
-                    </GuardedRoute>}/>
                 <Route
                     path="*"
                     element={<NotFound/>}
@@ -45,18 +40,33 @@ const AppRouter = () => {
             </Route>
         )
     }
+
+    const notAuthenticatedRoutes = () => {
+        return (
+            <Route
+                path="/"
+                element={<GuardedRoute isAuth={isAuth} permission="notAuth"><MainLayout/></GuardedRoute>}
+            >
+                <Route index element={<Landing/>} />
+                <Route path="login" element={<Login/>}/>
+                <Route path="register" element={<Register/>}/>
+                <Route path="email-signup" element={<FastSignUp/>}/>
+                <Route path="restore-password" element={<RestorePassword/>}/>
+            </Route>
+        )
+    }
     return (
         <Routes>
             {globalRoutes()}
+            {notAuthenticatedRoutes()}
             <Route
                 path="/"
-                element={<MainLayout/>}
+                element={<GuardedRoute isAuth={isAuth}><MainLayout/></GuardedRoute>}
             >
-                <Route path="/dashboard" element={
-                    <GuardedRoute isAuth={isAuth}>
-                        <Dashboard/>
-                    </GuardedRoute>
-                }/>
+                <Route path="dashboard" element={<Dashboard/>}/>
+                <Route path="categories" element={<CategoriesList/>}>
+                    <Route path=":categoryId" element={<CategoryPage/>}/>
+                </Route>
             </Route>
         </Routes>
     );

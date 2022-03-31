@@ -10,6 +10,7 @@ type GuardedRouteProps = {
 
 const GuardedRoute = ({children, isAuth, permission = 'auth'}: GuardedRouteProps) => {
 
+    console.log(isAuth, permission)
     if(!isAuth && permission === 'auth') return <Navigate to='/login' replace/>
     if(isAuth && permission === 'notAuth') return <Navigate to='/dashboard' replace/>
 
