@@ -7,13 +7,14 @@ import NotFound from "../pages/NotFound/NotFound";
 import MainLayout from "../layouts/MainLayout";
 import useTypedSelector from "../hooks/useTypedSelector";
 import Spinner from "../components/Spinner/Spinner";
+import CreateCategoryForm from "../pages/CategoryPage/components/CreateCategoryForm";
 
 const Register = React.lazy(() => import('../pages/Auth/Register'));
 const Login = React.lazy(() => import('../pages/Auth/Login'));
 const Landing = React.lazy(() => import('../pages/Landing/Landing'));
 const FastSignUp = React.lazy(() => import('../pages/Auth/FastSignUp'));
 const RestorePassword = React.lazy(() => import('../pages/Auth/RestorePassword'));
-const CategoriesList = React.lazy(() => import('../pages/CategoriesList/CategoriesList'));
+const CategoriesList = React.lazy(() => import('../pages/CategoriesList/CategoriesPage'));
 const CategoryPage = React.lazy(() => import('../pages/CategoryPage/CategoryPage'));
 
 const AppRouter = () => {
@@ -65,6 +66,7 @@ const AppRouter = () => {
             >
                 <Route path="dashboard" element={<Dashboard/>}/>
                 <Route path="categories" element={<CategoriesList/>}>
+                    <Route path="create" element={<CreateCategoryForm/>}/>
                     <Route path=":categoryId" element={<CategoryPage/>}/>
                 </Route>
             </Route>
