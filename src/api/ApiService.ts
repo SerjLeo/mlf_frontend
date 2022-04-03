@@ -11,13 +11,13 @@ apiInstance.interceptors.request.use ((config) => {
 });
 
 export default class ApiService {
-    static async apiRequest(url: string, method: Method = 'GET', data: Record<string, unknown> = {}, params: Record<string, unknown> = {}) {
+    static async apiRequest(url: string, method: Method = 'GET', params: Record<string, unknown> = {}) {
         try {
             const response = await apiInstance({
                 method,
                 url,
-                data,
-                params
+                data: method.toUpperCase() !== 'GET' ? params : [],
+                params: method.toUpperCase() === 'GET' ? params : []
             })
             return response.data
         } catch (e: any) {

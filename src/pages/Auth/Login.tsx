@@ -4,11 +4,11 @@ import {Button, TextField} from "@mui/material";
 import {Link} from 'react-router-dom';
 import styles from '../../assets/styles/Pages/Form.module.scss'
 import useTypedSelector from "../../hooks/useTypedSelector";
-import useActions from "../../hooks/useActions";
+import useUserActions from "../../hooks/actions/useUserActions";
 
 const Login = () => {
     const {loading} = useTypedSelector(state => state.user)
-    const {signIn} = useActions()
+    const {signIn} = useUserActions()
 
     const {getFormFieldProps, onFormSubmit} = useFormInput({
         email: '',
