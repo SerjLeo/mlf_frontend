@@ -1,12 +1,7 @@
 import {UserAction, UserActionTypes, UserState} from "./types";
+import UserStateFactory from "./store";
 
-const initialState: UserState = {
-    user: null,
-    isAuth: false,
-    loading: false,
-    initialLoading: true,
-    error: ''
-}
+const initialState: UserState = UserStateFactory()
 
 const userReducer = (state = initialState, action: UserAction): UserState => {
     switch (action.type) {

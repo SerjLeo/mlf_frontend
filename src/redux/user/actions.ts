@@ -19,7 +19,7 @@ export const checkoutAuthToken = () => async (dispatch: Dispatch<UserAction>) =>
         return
     }
     const {data, errors} = await ApiService.apiRequest('/auth/check', 'GET')
-    if(errors) {
+    if (errors) {
         dispatch({type: UserActionTypes.AUTH_ERROR, payload: {error: 'Error'}})
         return
     }
