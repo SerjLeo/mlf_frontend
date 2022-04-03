@@ -1,0 +1,17 @@
+.category_page__wrap {
+  display: flex;
+}
+
+.category_page__info {
+  flex-grow: 1;
+}
+
+.category_page__transactions {
+  flex-grow: 1;
+}
+
+.category_page__name {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}

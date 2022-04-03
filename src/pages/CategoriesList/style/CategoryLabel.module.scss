@@ -1,0 +1,26 @@
+.category_label {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  line-height: 14px;
+  padding: 4px 8px;
+  width: max-content;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  //&:before {
+  //  content: '';
+  //  position: absolute;
+  //  height: 16px;
+  //  width: 16px;
+  //  z-index: -1;
+  //  background-color: inherit;
+  //  top: 3px;
+  //  border-radius: 3px;
+  //  right: -3px;
+  //  transform: rotate(45deg);
+  //}
+}
