@@ -22,7 +22,7 @@ export default function useFormInput<T extends Record<string, unknown>, K extend
         }
     }
 
-    return {getFormFieldProps, onFormSubmit}
+    return {getFormFieldProps, onFormSubmit, setForm, form}
 }
 
 

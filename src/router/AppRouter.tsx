@@ -14,7 +14,7 @@ const Login = React.lazy(() => import('../pages/Auth/Login'));
 const Landing = React.lazy(() => import('../pages/Landing/Landing'));
 const FastSignUp = React.lazy(() => import('../pages/Auth/FastSignUp'));
 const RestorePassword = React.lazy(() => import('../pages/Auth/RestorePassword'));
-const CategoriesList = React.lazy(() => import('../pages/CategoriesList/CategoriesPage'));
+const CategoriesList = React.lazy(() => import('../pages/CategoriesPage/CategoriesPage'));
 const CategoryPage = React.lazy(() => import('../pages/CategoryPage/CategoryPage'));
 
 const AppRouter = () => {

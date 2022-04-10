@@ -1,0 +1,56 @@
+.transaction__form__wrap {
+ 
+}
+
+.transaction__form__title {
+  margin-bottom: 12px;
+}
+
+.transaction__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form__row {
+  display: flex;
+  gap: 8px;
+}
+
+.transaction__form__switch {
+  display: flex;
+  border: 1px solid black;
+  width: max-content;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.form__switch__btn {
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  opacity: 0.5;
+  user-select: none;
+}
+
+.switch__btn__positive {
+  background-color: lightblue;
+}
+
+.switch__btn__negative {
+  background-color: rosybrown;
+}
+
+.form__switch__btn.active {
+  opacity: 1;
+}
+
+.form__input {
+  width: 300px;
+}

@@ -3,7 +3,7 @@ import CategoryStateFactory from "./store";
 
 const initialState: CategoryState = CategoryStateFactory()
 
-const userReducer = (state = initialState, action: CategoryActions): CategoryState => {
+const categoryReducer = (state = initialState, action: CategoryActions): CategoryState => {
     switch (action.type) {
         case CategoryActionTypes.GET_CATEGORY:
             return {...CategoryStateFactory(), loading: true}
@@ -20,4 +20,4 @@ const userReducer = (state = initialState, action: CategoryActions): CategorySta
     }
 }
 
-export default userReducer
+export default categoryReducer

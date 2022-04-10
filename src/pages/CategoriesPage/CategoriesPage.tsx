@@ -3,7 +3,7 @@ import {Link, Outlet, useNavigate, useParams} from "react-router-dom";
 import Spinner from '../../components/Spinner/Spinner';
 import useCategoriesListActions from "../../hooks/actions/useCategoriesListActions";
 import useTypedSelector from "../../hooks/useTypedSelector";
-import styles from "./style/CategoriesPage.module.scss"
+import styles from "./styles/CategoriesPage.module.scss"
 import CategoriesList from "./components/CategoriesList";
 
 const CategoriesPage = () => {
