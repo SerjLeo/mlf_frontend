@@ -1,13 +1,13 @@
 import React, {useEffect} from 'react';
 import {Link, Outlet, useNavigate, useParams} from "react-router-dom";
 import Spinner from '../../components/Spinner/Spinner';
-import useCategoriesListActions from "../../hooks/actions/useCategoriesListActions";
 import useTypedSelector from "../../hooks/useTypedSelector";
 import styles from "./styles/CategoriesPage.module.scss"
 import CategoriesList from "./components/CategoriesList";
+import useActions from "../../hooks/useActions";
 
 const CategoriesPage = () => {
-    const {getCategoriesList} = useCategoriesListActions()
+    const {getCategoriesList} = useActions()
     const navigate = useNavigate()
     const {categoryId} = useParams()
     const {categories, loading} = useTypedSelector(state => state.categoriesList)

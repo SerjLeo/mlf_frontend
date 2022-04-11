@@ -1,8 +1,8 @@
 import {TransactionState} from "./types";
 
 const TransactionStateFactory: () => TransactionState = () => ({
-    transactionLoading: true,
-    transactionListLoading: true,
+    transactionLoading: false,
+    transactionListLoading: false,
     error: '',
     transactions: [],
     page: 1,

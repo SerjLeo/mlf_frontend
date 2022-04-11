@@ -1,14 +1,13 @@
 import React from 'react';
 import styles from "./CreateTransactionForm.module.scss"
-import useTypedSelector from "../../hooks/useTypedSelector";
 import useFormInput from "../../hooks/useFormInput";
-import useTransactionActions from "../../hooks/actions/useTransactionActions";
 import {Button, TextField} from "@mui/material";
+import {CreateTransactionInputForm} from "../../redux/transaction/types";
 
 type CreateTransactionFormProps = {
     title?: string
     loading?: boolean
-    onTransactionCreation: (form: unknown) => void
+    onTransactionCreation: (form: CreateTransactionInputForm) => void
 }
 
 const CreateTransactionForm: React.FC<CreateTransactionFormProps> = ({
@@ -29,7 +28,8 @@ const CreateTransactionForm: React.FC<CreateTransactionFormProps> = ({
         })
     }
 
-    const handleSubmit = (form: Record<string, unknown>) => {
+    const handleSubmit = (form: CreateTransactionInputForm) => {
+        form.amount = Number(form.amount)
         onTransactionCreation(form)
     }
     return (

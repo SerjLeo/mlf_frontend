@@ -7,11 +7,11 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import PersonIcon from '@mui/icons-material/Person';
 import useWindowWidth from "../../hooks/useWindowWidth";
 import useTypedSelector from "../../hooks/useTypedSelector";
-import useUserActions from "../../hooks/actions/useUserActions";
+import useActions from "../../hooks/useActions";
 
 const Header = () => {
     const {isAuth} = useTypedSelector(state => state.user)
-    const {signOut} = useUserActions()
+    const {signOut} = useActions()
     const windowWidth = useWindowWidth()
 
     const nonAuthLinks = () => {

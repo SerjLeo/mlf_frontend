@@ -19,6 +19,13 @@ export type TransactionState = {
     error: string
 }
 
+export type CreateTransactionInputForm = {
+    amount: number
+    description?: string
+    type: boolean
+    categories?: Category[]
+}
+
 export enum TransactionActionTypes {
     GET_TRANSACTION = "GET_TRANSACTION",
     UPDATE_TRANSACTION = "UPDATE_TRANSACTION",
@@ -43,7 +50,7 @@ type UpdateTransactionAction = {
 
 type TransactionSuccessAction = {
     type: TransactionActionTypes.TRANSACTION_SUCCESS
-    payload: { category: Category }
+    payload: { transaction: Transaction }
 }
 
 type TransactionErrorAction = {
@@ -65,7 +72,7 @@ type UpdateTransactionListAction = {
 
 type TransactionListSuccessAction = {
     type: TransactionActionTypes.TRANSACTION_LIST_SUCCESS
-    payload: { category: Category }
+    payload: { transactions: Transaction[] }
 }
 
 type TransactionListErrorAction = {

@@ -1,13 +1,13 @@
 import React from 'react';
-import useTypedSelector from "../../../hooks/useTypedSelector";
-import useFormInput from "../../../hooks/useFormInput";
 import {Button, TextField} from "@mui/material";
-import styles from "../styles/CreateCategoryForm.module.scss"
-import useCategoryActions from "../../../hooks/actions/useCategoryActions";
+import styles from "./CreateCategoryForm.module.scss"
+import useFormInput from "../../hooks/useFormInput";
+import useTypedSelector from "../../hooks/useTypedSelector";
+import useActions from "../../hooks/useActions";
 
 const CreateCategoryForm = () => {
     const {loading} = useTypedSelector(state => state.user)
-    const {createCategory} = useCategoryActions()
+    const {createCategory} = useActions()
     const {getFormFieldProps, onFormSubmit} = useFormInput({
         name: '',
         color: ''

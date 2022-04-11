@@ -2,10 +2,10 @@ import React, {useEffect} from 'react';
 import AppRouter from "./router/AppRouter";
 import "./assets/styles/app.scss"
 import CssBaseline from "@mui/material/CssBaseline";
-import useUserActions from "./hooks/actions/useUserActions";
+import useActions from "./hooks/useActions";
 
 function App() {
-    const {checkoutAuthToken} = useUserActions()
+    const {checkoutAuthToken} = useActions()
 
     useEffect(() => {
         checkoutAuthToken()

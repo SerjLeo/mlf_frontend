@@ -1,11 +1,11 @@
 import React from 'react';
 
-const TransactionCard = () => {
+const NoData = () => {
     return (
         <div>
-            Hey
+            No data
         </div>
     );
 };
 
-export default TransactionCard;
+export default NoData;

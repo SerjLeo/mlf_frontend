@@ -1,12 +1,12 @@
 import React, {useEffect} from 'react';
 import useTypedSelector from "../../hooks/useTypedSelector";
-import useCategoryActions from "../../hooks/actions/useCategoryActions";
 import {useParams} from "react-router-dom";
 import styles from "./styles/CategoryPage.module.scss"
 import EditTextInput from "../../components/EditTextInput/EditTextInput";
+import useActions from "../../hooks/useActions";
 
 const CategoryPage = () => {
-    const {getCategoryById, updateCategory} = useCategoryActions()
+    const {getCategoryById, updateCategory} = useActions()
     const {categoryId} = useParams()
     const {name, loading, color} = useTypedSelector(state => state.category)
 

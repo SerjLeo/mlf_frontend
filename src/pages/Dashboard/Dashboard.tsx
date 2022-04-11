@@ -1,10 +1,21 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Link} from "react-router-dom";
 import CreateTransactionForm from "../../components/CrateTransactionForm/CreateTransactionForm";
+import useTypedSelector from "../../hooks/useTypedSelector";
+import {CreateTransactionInputForm} from "../../redux/transaction/types";
+import TransactionList from "../../components/TransactionList/TransactionList";
+import useActions from "../../hooks/useActions";
 
 const Dashboard = () => {
-    const handleTransactionCreation = (form: unknown) => {
-        console.log(form)
+    const {transactionLoading, transactionListLoading, transactions} = useTypedSelector(state => state.transaction)
+    const {createTransaction, getInitialTransactionsList} = useActions()
+
+    useEffect(() => {
+        getInitialTransactionsList()
+    }, [getInitialTransactionsList])
+
+    const handleTransactionCreation = (form: CreateTransactionInputForm) => {
+        createTransaction(form)
     }
     return (
         <div>
@@ -14,7 +25,8 @@ const Dashboard = () => {
             </div>
 
             <div>
-                <CreateTransactionForm onTransactionCreation={handleTransactionCreation}/>
+                <CreateTransactionForm loading={transactionLoading} onTransactionCreation={handleTransactionCreation}/>
+                <TransactionList transactions={transactions} loading={transactionListLoading}/>
             </div>
         </div>
     );

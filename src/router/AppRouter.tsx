@@ -7,7 +7,7 @@ import NotFound from "../pages/NotFound/NotFound";
 import MainLayout from "../layouts/MainLayout";
 import useTypedSelector from "../hooks/useTypedSelector";
 import Spinner from "../components/Spinner/Spinner";
-import CreateCategoryForm from "../pages/CategoryPage/components/CreateCategoryForm";
+import CreateCategoryForm from "../components/CreateCategoryForm/CreateCategoryForm";
 
 const Register = React.lazy(() => import('../pages/Auth/Register'));
 const Login = React.lazy(() => import('../pages/Auth/Login'));
