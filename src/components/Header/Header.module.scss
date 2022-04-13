@@ -20,6 +20,12 @@
   gap: 8px;
 }
 
+.header__left_panel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .header__button_text {
   @media screen and (max-width: 768px) {
     display: none;

@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Header.module.scss'
+import Menu from '../Menu/Menu'
 import {Button, IconButton} from "@mui/material";
 import {Link} from "react-router-dom";
 import LoginIcon from '@mui/icons-material/Login';
@@ -74,7 +75,10 @@ const Header = () => {
 
     return (
         <div className={styles.header}>
-            <Link className={styles.header__text} to="/">{windowWidth > 768 ? 'My Local Financier' : 'MLF'}</Link>
+            <div className={styles.header__left_panel}>
+                {isAuth && <Menu/>}
+                <Link className={styles.header__text} to="/">{windowWidth > 768 ? 'My Local Financier' : 'MLF'}</Link>
+            </div>
             {isAuth ? authLinks() : nonAuthLinks()}
         </div>
     );

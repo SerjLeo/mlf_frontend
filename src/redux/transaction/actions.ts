@@ -43,3 +43,7 @@ export const createTransaction = (form: any) => async (dispatch: Dispatch<Transa
 export const updateTransaction = (id: number, form: any) => async (dispatch: Dispatch<TransactionsActions>) => {
 
 }
+
+export const deleteTransaction = (id: number) => async (dispatch: Dispatch<TransactionsActions>) => {
+
+}
