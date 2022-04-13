@@ -3,6 +3,8 @@ import styles from "./CreateTransactionForm.module.scss"
 import useFormInput from "../../hooks/useFormInput";
 import {Button, TextField} from "@mui/material";
 import {CreateTransactionInputForm} from "../../redux/transaction/types";
+import {numberConverter} from "../../utils/Converters";
+import {maxNumberValue, minNumberValue} from "../../utils/Validators";
 
 type CreateTransactionFormProps = {
     title?: string
@@ -29,7 +31,7 @@ const CreateTransactionForm: React.FC<CreateTransactionFormProps> = ({
     }
 
     const handleSubmit = (form: CreateTransactionInputForm) => {
-        form.amount = Number(form.amount)
+        if(form.amount <= 0) return;
         onTransactionCreation(form)
     }
     return (
@@ -37,12 +39,23 @@ const CreateTransactionForm: React.FC<CreateTransactionFormProps> = ({
             {title && <h3>{title}</h3>}
             <form onSubmit={onFormSubmit(handleSubmit)} className={styles.transaction__form}>
                 <div className={styles.transaction__form__switch}>
-                    <div className={`${styles.form__switch__btn} ${form.type && styles.active} ${styles.switch__btn__positive}`} onClick={() => setType(true)}>+</div>
-                    <div className={`${styles.form__switch__btn} ${!form.type && styles.active} ${styles.switch__btn__negative}`} onClick={() => setType(false)}>-</div>
+                    <div
+                        className={`${styles.form__switch__btn} ${form.type && styles.active} ${styles.switch__btn__positive}`}
+                        onClick={() => setType(true)}
+                        data-testid="positive-type-btn">+</div>
+                    <div
+                        className={`${styles.form__switch__btn} ${!form.type && styles.active} ${styles.switch__btn__negative}`}
+                        onClick={() => setType(false)}
+                        data-testid="negative-type-btn">-</div>
                 </div>
                 <div className={styles.form__row}>
-                    <TextField label='amount' type="number" inputProps={{min: 0}} {...getFormFieldProps('amount')} required className={styles.form__input}/>
-                    <TextField label='description' {...getFormFieldProps('description')} className={styles.form__input}/>
+                    <TextField
+                        label='amount'
+                        type="number"
+                        inputProps={{min: 0, max: 1000000}}
+                        {...getFormFieldProps('amount', numberConverter, [maxNumberValue(1000000), minNumberValue(0)])}
+                        required className={styles.form__input}/>
+                    <TextField label='description' inputProps={{maxLength: 75}} {...getFormFieldProps('description')} className={styles.form__input}/>
                     <Button disabled={loading} type="submit">ADD</Button>
                 </div>
             </form>

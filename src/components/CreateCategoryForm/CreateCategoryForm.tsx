@@ -20,8 +20,17 @@ const CreateCategoryForm = () => {
     return (
         <div className={styles.form__wrap}>
             <form onSubmit={onFormSubmit(handleSubmit)} className={styles.form}>
-                <TextField label='name' {...getFormFieldProps('name')} required className={styles.form__input}/>
-                <TextField label='color' type='color' {...getFormFieldProps('color')} className={styles.form__color_input}/>
+                <TextField
+                    label='name'
+                    {...getFormFieldProps('name')}
+                    required
+                    className={styles.form__input}
+                />
+                <TextField
+                    label='color'
+                    type='color'
+                    {...getFormFieldProps('color')}
+                    className={styles.form__color_input}/>
                 <Button disabled={loading} type="submit">Create</Button>
             </form>
         </div>
