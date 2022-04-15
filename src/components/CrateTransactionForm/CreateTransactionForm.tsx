@@ -5,6 +5,8 @@ import {Button, TextField} from "@mui/material";
 import {CreateTransactionInputForm} from "../../redux/transaction/types";
 import {numberConverter} from "../../utils/Converters";
 import {maxNumberValue, minNumberValue} from "../../utils/Validators";
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 
 type CreateTransactionFormProps = {
     title?: string
@@ -38,24 +40,36 @@ const CreateTransactionForm: React.FC<CreateTransactionFormProps> = ({
         <div className={styles.transaction__form__wrap}>
             {title && <h3>{title}</h3>}
             <form onSubmit={onFormSubmit(handleSubmit)} className={styles.transaction__form}>
-                <div className={styles.transaction__form__switch}>
-                    <div
-                        className={`${styles.form__switch__btn} ${form.type && styles.active} ${styles.switch__btn__positive}`}
-                        onClick={() => setType(true)}
-                        data-testid="positive-type-btn">+</div>
-                    <div
-                        className={`${styles.form__switch__btn} ${!form.type && styles.active} ${styles.switch__btn__negative}`}
-                        onClick={() => setType(false)}
-                        data-testid="negative-type-btn">-</div>
-                </div>
-                <div className={styles.form__row}>
+                <div className={styles.form__inputs_group}>
                     <TextField
+                        size="small"
                         label='amount'
+                        variant="standard"
                         type="number"
                         inputProps={{min: 0, max: 1000000}}
                         {...getFormFieldProps('amount', numberConverter, [maxNumberValue(1000000), minNumberValue(0)])}
-                        required className={styles.form__input}/>
-                    <TextField label='description' inputProps={{maxLength: 75}} {...getFormFieldProps('description')} className={styles.form__input}/>
+                        required className={styles.form__input}
+                    />
+                    <TextField
+                        size="small"
+                        variant="standard"
+                        label='description'
+                        inputProps={{maxLength: 75}}
+                        {...getFormFieldProps('description')}
+                        className={styles.form__input}
+                    />
+                </div>
+                <div className={styles.form__inputs_controls}>
+                    <div className={styles.transaction__form__switch}>
+                        <div
+                            className={`${styles.form__switch__btn} ${form.type && styles.active} ${styles.switch__btn__positive}`}
+                            onClick={() => setType(true)}
+                            data-testid="positive-type-btn"><AddIcon/></div>
+                        <div
+                            className={`${styles.form__switch__btn} ${!form.type && styles.active} ${styles.switch__btn__negative}`}
+                            onClick={() => setType(false)}
+                            data-testid="negative-type-btn"><RemoveIcon/></div>
+                    </div>
                     <Button disabled={loading} type="submit">ADD</Button>
                 </div>
             </form>

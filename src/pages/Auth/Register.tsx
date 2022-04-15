@@ -4,9 +4,11 @@ import {Button, TextField} from "@mui/material";
 import {Link} from 'react-router-dom';
 import styles from '../../assets/styles/Pages/Form.module.scss'
 import useTypedSelector from "../../hooks/useTypedSelector";
+import useActions from "../../hooks/useActions";
 
 const Register = React.memo(() => {
     const {loading} = useTypedSelector(state => state.user)
+    const {signUp} = useActions()
 
     const {getFormFieldProps, onFormSubmit} = useFormInput({
         name: '',
@@ -15,7 +17,7 @@ const Register = React.memo(() => {
     })
 
     const handleSubmit = (form: Record<string, unknown>) => {
-        console.log(form)
+        signUp(form)
     }
 
     return (
@@ -25,7 +27,7 @@ const Register = React.memo(() => {
                 <form onSubmit={onFormSubmit(handleSubmit)} className={styles.form}>
                     <TextField label='name' {...getFormFieldProps('name')} required/>
                     <TextField label='email' {...getFormFieldProps('email')} required/>
-                    <TextField label='password' {...getFormFieldProps('password')} required/>
+                    <TextField label='password' type="password" {...getFormFieldProps('password')} required/>
                     <Button type="submit" disabled={loading}>Register</Button>
                     <Link className={styles.form__redirect} to="/login">Already registered? Login!</Link>
                 </form>

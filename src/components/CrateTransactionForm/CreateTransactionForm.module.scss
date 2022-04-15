@@ -1,5 +1,8 @@
 .transaction__form__wrap {
- 
+  padding: 16px;
+  box-shadow: 0 2px 40px -15px rgba(34, 60, 80, 0.6);
+  width: max-content;
+  border-radius: 4px;
 }
 
 .transaction__form__title {
@@ -8,8 +11,7 @@
 
 .transaction__form {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  gap: 24px;
 }
 
 .form__row {
@@ -17,18 +19,30 @@
   gap: 8px;
 }
 
+.form__inputs_group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form__inputs_controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+}
+
 .transaction__form__switch {
   display: flex;
-  border: 1px solid black;
   width: max-content;
-  border-radius: 4px;
   overflow: hidden;
+  gap: 8px;
 }
 
 .form__switch__btn {
-  width: 30px;
-  height: 30px;
-  min-width: 30px;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,15 +50,16 @@
   font-weight: 600;
   cursor: pointer;
   opacity: 0.5;
+  border-radius: 4px;
   user-select: none;
 }
 
 .switch__btn__positive {
-  background-color: lightblue;
+  background-color: #64b5f6;
 }
 
 .switch__btn__negative {
-  background-color: rosybrown;
+  background-color: #ff8a65;
 }
 
 .form__switch__btn.active {
