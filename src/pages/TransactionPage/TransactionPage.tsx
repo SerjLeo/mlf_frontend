@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 
-const TransactionPage = () => {
-    return (
-        <div>
+const TransactionPage: React.FC = () => {
+	return (
+		<div>
 
-        </div>
-    );
-};
+		</div>
+	)
+}
 
-export default TransactionPage;
+export default TransactionPage

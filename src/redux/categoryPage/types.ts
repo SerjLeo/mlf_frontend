@@ -1,17 +1,19 @@
-import {Category} from "../categoriesList/types";
-import {Nullable} from "../../utils/types";
+import {Category} from '../categoriesList/types'
+import {Nullable} from '../../utils/types'
 
 export type CategoryState = Nullable<Category> & {
     loading: boolean
     error: string
 }
 
+export type CreateCategoryForm = Pick<Category, 'name' | 'color'>
+
 export enum CategoryActionTypes {
-    GET_CATEGORY = "GET_CATEGORY",
-    UPDATE_CATEGORY = "UPDATE_CATEGORY",
-    CATEGORY_SUCCESS = "CATEGORY_SUCCESS",
-    CATEGORY_ERROR = "CATEGORY_ERROR",
-    CLEAR_CATEGORY = "CLEAR_CATEGORY"
+    GET_CATEGORY = 'GET_CATEGORY',
+    UPDATE_CATEGORY = 'UPDATE_CATEGORY',
+    CATEGORY_SUCCESS = 'CATEGORY_SUCCESS',
+    CATEGORY_ERROR = 'CATEGORY_ERROR',
+    CLEAR_CATEGORY = 'CLEAR_CATEGORY'
 }
 
 type GetCategoryAction = {

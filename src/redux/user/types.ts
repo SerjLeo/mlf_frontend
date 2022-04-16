@@ -6,12 +6,26 @@ export enum UserActionTypes {
     LOGOUT = 'LOGOUT'
 }
 
+export type User = {
+    name: string
+    email: string
+}
+
 export type UserState = {
-    user: any
+    user: User
     isAuth: boolean
     loading: boolean
     initialLoading: boolean
     error: string
+}
+
+export type UserSignInForm = {
+    email: string
+    password: string
+}
+
+export type UserSignUpForm = UserSignInForm & {
+    name: string
 }
 
 type AuthStartedAction = {
@@ -20,7 +34,7 @@ type AuthStartedAction = {
 
 type AuthCompleteAction = {
     type: UserActionTypes.AUTH_COMPLETED
-    payload: { user: any }
+    payload: { user: User }
 }
 
 type AuthErrorAction = {

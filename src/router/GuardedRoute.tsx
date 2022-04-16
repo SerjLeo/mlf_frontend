@@ -1,6 +1,4 @@
-import React from 'react';
-import { Navigate } from 'react-router-dom';
-import useTypedSelector from "../hooks/useTypedSelector";
+import { Navigate } from 'react-router-dom'
 
 type GuardedRouteProps = {
     children: JSX.Element
@@ -10,10 +8,10 @@ type GuardedRouteProps = {
 
 const GuardedRoute = ({children, isAuth, permission = 'auth'}: GuardedRouteProps) => {
 
-    if(!isAuth && permission === 'auth') return <Navigate to='/login' replace/>
-    if(isAuth && permission === 'notAuth') return <Navigate to='/dashboard' replace/>
+	if(!isAuth && permission === 'auth') return <Navigate to='/login' replace/>
+	if(isAuth && permission === 'notAuth') return <Navigate to='/dashboard' replace/>
 
-    return children;
-};
+	return children
+}
 
-export default GuardedRoute;
+export default GuardedRoute

@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 
-const NoData = () => {
-    return (
-        <div>
+const NoData: React.FC = () => {
+	return (
+		<div>
             No data
-        </div>
-    );
-};
+		</div>
+	)
+}
 
-export default NoData;
+export default NoData

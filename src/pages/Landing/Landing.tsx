@@ -1,16 +1,12 @@
-import React from 'react';
-import {useSelector} from "react-redux";
+import React from 'react'
 
-const Landing = () => {
+const Landing: React.FC = () => {
 
-    const counter = useSelector((state: any) => state.user.counter)
-
-    return (
-        <div>
+	return (
+		<div>
             Here is Landing
-            {counter}
-        </div>
-    );
-};
+		</div>
+	)
+}
 
-export default Landing;
+export default Landing
