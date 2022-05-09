@@ -1,0 +1,34 @@
+.header__wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 48px;
+  padding-bottom: 12px;
+}
+
+.header__balance_item {
+  display: flex;
+}
+
+.header__balance_icon {
+  margin-right: 12px;
+}
+
+.header__balance_info {
+
+}
+
+.header__balance_title {
+  font-size: 14px;
+  font-weight: 300;
+  color: #b4b4b4;
+}
+
+.header__balance_value {
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 600;
+}
+
+.header__profile {
+  margin-left: auto;
+}
