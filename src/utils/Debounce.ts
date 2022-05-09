@@ -1,6 +1,6 @@
-export default function (func: (...args: unknown[]) => void, waitTime: number) {
+export default function (func: (...args: any[]) => void, waitTime: number) {
 	let callTimeout: ReturnType<typeof setTimeout> | null = null
-	return function(this: unknown, ...args: unknown[]) {
+	return function(this: unknown, ...args: any[]) {
 		if(callTimeout) clearTimeout(callTimeout)
 		callTimeout = setTimeout(() => {
 			func.apply(this, args)
