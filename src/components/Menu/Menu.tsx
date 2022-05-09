@@ -7,6 +7,7 @@ import ListItem from '@mui/material/ListItem'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import MenuIcon from '@mui/icons-material/Menu'
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import InboxIcon from '@mui/icons-material/Inbox'
 import MailIcon from '@mui/icons-material/Mail'
 import {IconButton} from '@mui/material'
@@ -48,7 +49,7 @@ const Menu: React.FC = () => {
 	return (
 		<div>
 			<IconButton onClick={toggleMenu(true)}>
-				<MenuIcon />
+				<ArrowForwardIosIcon />
 			</IconButton>
 			<SwipeableDrawer
 				anchor="left"

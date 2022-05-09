@@ -4,6 +4,12 @@
   flex-direction: column;
 }
 
+.menu_button {
+  position: fixed;
+  top: 50%;
+  transform: translate(-8px, -50%);
+}
+
 .app__content {
   flex-grow: 1;
   padding: 24px 76px;
