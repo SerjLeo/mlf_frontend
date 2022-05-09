@@ -7,7 +7,14 @@
 .menu_button {
   position: fixed;
   top: 50%;
-  transform: translate(-8px, -50%);
+  transform: translate(-32px, -50%);
+  height: 64px;
+  width: 64px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: var(--color-light-grey);
 }
 
 .app__content {
