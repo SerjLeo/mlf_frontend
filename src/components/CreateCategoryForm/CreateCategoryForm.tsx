@@ -6,7 +6,7 @@ import useTypedSelector from '../../hooks/useTypedSelector'
 import useActions from '../../hooks/useActions'
 import {CreateCategoryForm} from '../../redux/categoryPage/types'
 
-const CreateCategoryForm: React.FC= () => {
+const CreateCategoryFormComponent: React.FC= () => {
 	const {loading} = useTypedSelector(state => state.user)
 	const {createCategory} = useActions()
 	const {getFormFieldProps, onFormSubmit} = useFormInput({
@@ -38,4 +38,4 @@ const CreateCategoryForm: React.FC= () => {
 	)
 }
 
-export default CreateCategoryForm
+export default CreateCategoryFormComponent

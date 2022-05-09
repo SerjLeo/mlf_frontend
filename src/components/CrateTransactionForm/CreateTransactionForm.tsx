@@ -35,6 +35,11 @@ const CreateTransactionForm: React.FC<CreateTransactionFormProps> = ({
 	const handleSubmit = (form: CreateTransactionInputForm) => {
 		if(form.amount <= 0) return
 		onTransactionCreation(form)
+		setForm({
+			...form,
+			amount: 0,
+			description: ''
+		})
 	}
 	return (
 		<div className={styles.transaction__form__wrap}>
@@ -64,10 +69,12 @@ const CreateTransactionForm: React.FC<CreateTransactionFormProps> = ({
 						<button
 							className={`${styles.form__switch__btn} ${form.type && styles.active} ${styles.switch__btn__positive}`}
 							onClick={() => setType(true)}
+							type='button'
 							data-testid="positive-type-btn"><AddIcon/></button>
 						<button
 							className={`${styles.form__switch__btn} ${!form.type && styles.active} ${styles.switch__btn__negative}`}
 							onClick={() => setType(false)}
+							type='button'
 							data-testid="negative-type-btn"><RemoveIcon/></button>
 					</div>
 					<Button disabled={loading} type="submit">ADD</Button>

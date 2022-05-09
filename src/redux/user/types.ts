@@ -12,7 +12,7 @@ export type User = {
 }
 
 export type UserState = {
-    user: User
+    user: User | null
     isAuth: boolean
     loading: boolean
     initialLoading: boolean

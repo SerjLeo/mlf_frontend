@@ -1,6 +1,6 @@
 import {useState, ChangeEvent, FormEventHandler} from 'react'
 import {InputValidator} from '../utils/Validators'
-import {InputConverter, stringConverter} from '../utils/Converters'
+import {InputConverter,} from '../utils/Converters'
 
 export default function useFormInput<T extends Record<string, unknown>, K extends keyof T>(initialValue: T) {
 	const [form, setForm] = useState(initialValue)
@@ -25,7 +25,7 @@ export default function useFormInput<T extends Record<string, unknown>, K extend
 		}
 	}
 
-	const onFormSubmit = (callback: (form: Record<string, unknown>) => void): FormEventHandler<HTMLFormElement> => {
+	const onFormSubmit = (callback: (form: T) => void): FormEventHandler<HTMLFormElement> => {
 		return function (e) {
 			e.preventDefault()
 			callback(form)

@@ -1,3 +1,22 @@
 .transaction_card__wrap {
   display: flex;
+  align-items: center;
+}
+
+.card__amount {
+  font-weight: 600;
+  margin-right: 12px;
+}
+
+.card__description {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.transaction__positive {
+  color: green;
+}
+
+.transaction__negative {
+  color: red;
 }

@@ -1,7 +1,7 @@
 import {Dispatch} from 'redux'
-import {TransactionActionTypes, TransactionsActions} from './types'
+import {CreateTransactionInputForm, TransactionActionTypes, TransactionsActions} from './types'
 import ApiService from '../../api/ApiService'
-import {RootState} from '../index'
+import {RootState} from '@/redux'
 
 export const getTransactionsById = (id: number) => async (dispatch: Dispatch<TransactionsActions>) => {
 	dispatch({type: TransactionActionTypes.GET_TRANSACTION})
@@ -29,7 +29,7 @@ export const getInitialTransactionsList = () => async (dispatch: Dispatch<Transa
 	await getTransactionsList()(dispatch, getState)
 }
 
-export const createTransaction = (form: any) => async (dispatch: Dispatch<TransactionsActions>, getState: () => RootState) => {
+export const createTransaction = (form: CreateTransactionInputForm) => async (dispatch: Dispatch<TransactionsActions>, getState: () => RootState) => {
 	dispatch({type: TransactionActionTypes.GET_TRANSACTION})
 	const {data, errors} = await ApiService.apiRequest('/transaction', 'POST', form)
 	if(errors) {
@@ -40,10 +40,10 @@ export const createTransaction = (form: any) => async (dispatch: Dispatch<Transa
 	await getInitialTransactionsList()(dispatch, getState)
 }
 
-export const updateTransaction = (id: number, form: any) => async (dispatch: Dispatch<TransactionsActions>) => {
-
-}
-
-export const deleteTransaction = (id: number) => async (dispatch: Dispatch<TransactionsActions>) => {
-
-}
+// export const updateTransaction = (id: number, form: any) => async (dispatch: Dispatch<TransactionsActions>) => {
+//
+// }
+//
+// export const deleteTransaction = (id: number) => async (dispatch: Dispatch<TransactionsActions>) => {
+//
+// }

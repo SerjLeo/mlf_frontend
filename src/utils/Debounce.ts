@@ -1,4 +1,4 @@
-export default function (func: (...args: any[]) => void, waitTime: number) {
+export default function (func: (...args: unknown[]) => void, waitTime: number) {
 	let callTimeout: ReturnType<typeof setTimeout> | null = null
 	return function(this: unknown, ...args: unknown[]) {
 		if(callTimeout) clearTimeout(callTimeout)
