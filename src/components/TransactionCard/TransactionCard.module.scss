@@ -14,9 +14,9 @@
 }
 
 .transaction__positive {
-  color: green;
+  color: var(--color-main-green);
 }
 
 .transaction__negative {
-  color: red;
+  color: var(--color-main-red);
 }

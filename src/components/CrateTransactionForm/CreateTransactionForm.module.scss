@@ -56,11 +56,11 @@
 }
 
 .switch__btn__positive {
-  background-color: #64b5f6;
+  background-color: var(--color-main-blue);
 }
 
 .switch__btn__negative {
-  background-color: #ff8a65;
+  background-color: var(--color-main-red);
 }
 
 .form__switch__btn.active {
