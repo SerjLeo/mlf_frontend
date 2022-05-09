@@ -45,7 +45,9 @@ const LastTransactions: React.FC = () => {
 				<div className={styles.transactions__search}>
 					<SearchField onChange={onSearch} inputProps={{size: 'small', fullWidth: true}}/>
 				</div>
-				<TransactionList transactions={transactions} loading={transactionListLoading}/>
+				<div className={styles.transactions__list}>
+					<TransactionList transactions={transactions} loading={transactionListLoading}/>
+				</div>
 			</div>
 		</div>
 	)

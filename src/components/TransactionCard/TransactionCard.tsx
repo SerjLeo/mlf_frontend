@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './TransactionCard.module.scss'
-import {Transaction} from '../../redux/transaction/types'
+import {Transaction} from '@/redux/transaction/types'
+import DateBuilder from '@utils/DateBuilder'
 
 type TransactionCardProps = {
     transaction: Transaction
@@ -16,6 +17,7 @@ const TransactionCard: React.FC<TransactionCardProps> = ({transaction}) => {
 					`}
 			>{transaction.amount}</div>
 			<div className={styles.card__description}>{transaction.description}</div>
+			<div className={styles.card__time}>{DateBuilder(transaction.created_at)}</div>
 		</div>
 	)
 }

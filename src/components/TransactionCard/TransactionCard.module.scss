@@ -1,6 +1,10 @@
 .transaction_card__wrap {
   display: flex;
   align-items: center;
+  border-bottom: 1px solid var(--color-light-grey);
+  padding-bottom: 12px;
+  flex-grow: 1;
+
 }
 
 .card__amount {
@@ -19,4 +23,10 @@
 
 .transaction__negative {
   color: var(--color-main-red);
+}
+
+.card__time {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--color-dark-grey);
 }
