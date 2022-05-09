@@ -63,5 +63,23 @@
   "resolutions": {
     "@types/react": "17.0.2",
     "@types/react-dom": "17.0.2"
+  },
+  "_moduleAliases": {
+    "@": "./src/",
+    "@components": "./src/components",
+    "@pages": "./src/components",
+    "@utils": "./src/utils",
+    "@hooks": "./src/hooks",
+    "@assets": "./src/assets"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "@/(.*)$": "<rootDir>/src/$1",
+      "@components/(.*)$": "<rootDir>/src/components/$1",
+      "@pages/(.*)$": "<rootDir>/src/pages/$1",
+      "@utils/(.*)$": "<rootDir>/src/utils/$1",
+      "@hooks/(.*)$": "<rootDir>/src/hooks/$1",
+      "@assets/(.*)$": "<rootDir>/src/assets/$1"
+    }
   }
 }

@@ -1,10 +1,10 @@
 import React from 'react'
 import styles from './CreateTransactionForm.module.scss'
-import useFormInput from '../../hooks/useFormInput'
+import useFormInput from '@hooks/useFormInput'
 import {Button, TextField} from '@mui/material'
-import {CreateTransactionInputForm} from '../../redux/transaction/types'
-import {numberConverter} from '../../utils/Converters'
-import {maxNumberValue, minNumberValue} from '../../utils/Validators'
+import {CreateTransactionInputForm} from '@/redux/transaction/types'
+import {numberConverter} from '@/utils/Converters'
+import {maxNumberValue, minNumberValue} from '@/utils/Validators'
 import AddIcon from '@mui/icons-material/Add'
 import RemoveIcon from '@mui/icons-material/Remove'
 
@@ -15,7 +15,6 @@ type CreateTransactionFormProps = {
 }
 
 const CreateTransactionForm: React.FC<CreateTransactionFormProps> = ({
-	title = '',
 	onTransactionCreation,
 	loading = false
 }) => {
@@ -43,7 +42,6 @@ const CreateTransactionForm: React.FC<CreateTransactionFormProps> = ({
 	}
 	return (
 		<div className={styles.transaction__form__wrap}>
-			{title && <h3>{title}</h3>}
 			<form onSubmit={onFormSubmit(handleSubmit)} className={styles.transaction__form}>
 				<div className={styles.form__inputs_group}>
 					<TextField
