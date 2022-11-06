@@ -19,7 +19,7 @@ const Menu: React.FC = () => {
 		setOpen(isOpen)
 	}
 
-	const toggleMenuMouse = (isOpen: boolean) => (event: React.MouseEvent) => {
+	const toggleMenuMouse = (isOpen: boolean) => () => {
 		setOpen(isOpen)
 	}
 
