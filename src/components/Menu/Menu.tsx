@@ -14,8 +14,12 @@ import {IconButton} from '@mui/material'
 const Menu: React.FC = () => {
 	const [isOpen, setOpen] = useState(false)
 
-	const toggleMenu = (isOpen: boolean) => (event: any) => {
+	const toggleMenu = (isOpen: boolean) => (event: React.KeyboardEvent) => {
 		if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) return
+		setOpen(isOpen)
+	}
+
+	const toggleMenuMouse = (isOpen: boolean) => (event: React.MouseEvent) => {
 		setOpen(isOpen)
 	}
 
@@ -47,7 +51,7 @@ const Menu: React.FC = () => {
 
 	return (
 		<div>
-			<IconButton onClick={toggleMenu(true)}>
+			<IconButton onClick={toggleMenuMouse(true)}>
 				<ArrowForwardIosIcon />
 			</IconButton>
 			<SwipeableDrawer

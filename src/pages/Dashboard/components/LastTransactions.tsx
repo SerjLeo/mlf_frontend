@@ -19,9 +19,9 @@ const LastTransactions: React.FC = () => {
 		getInitialTransactionsList()
 	}, [getInitialTransactionsList])
 
-	// useEffect(() => {
-	// 	console.log(search)
-	// }, [search])
+	useEffect(() => {
+		console.log(search)
+	}, [search])
 
 	const onSearch = useCallback(debounce((searchString: string) => {
 		setSearch(searchString)
