@@ -26,7 +26,12 @@
     "redux-thunk": "^2.4.1",
     "sass": "^1.49.9",
     "typescript": "^4.5.5",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "@typescript-eslint/eslint-plugin": "^5.19.0",
+    "@typescript-eslint/parser": "^5.19.0",
+    "eslint": "^8.13.0",
+    "eslint-plugin-jest": "^26.1.4",
+    "eslint-plugin-react": "^7.29.4"
   },
   "scripts": {
     "start": "craco start",
@@ -53,13 +58,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.19.0",
-    "@typescript-eslint/parser": "^5.19.0",
-    "eslint": "^8.13.0",
-    "eslint-plugin-jest": "^26.1.4",
-    "eslint-plugin-react": "^7.29.4"
   },
   "resolutions": {
     "@types/react": "17.0.2",
