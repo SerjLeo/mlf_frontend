@@ -14,7 +14,6 @@ FROM golang:1.17.3-alpine3.14 AS back-builder
 WORKDIR /server
 COPY ./server ./
 
-RUN go mod download && go get -u ./...
 RUN go build -o bin/main main.go
 
 FROM alpine:latest
