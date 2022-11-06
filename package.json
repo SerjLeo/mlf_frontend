@@ -34,7 +34,7 @@
     "eslint-plugin-react": "^7.29.4"
   },
   "scripts": {
-    "start": "craco start",
+    "dev": "craco start",
     "build": "craco build",
     "test": "craco test",
     "lint": "eslint . --fix",
