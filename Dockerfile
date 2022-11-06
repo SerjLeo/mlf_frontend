@@ -5,7 +5,6 @@ ENV NODE_ENV production
 WORKDIR /client
 COPY . .
 
-
 RUN yarn && yarn build
 
 FROM golang:1.17.3-alpine3.14 AS back-builder

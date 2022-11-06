@@ -1,7 +1,7 @@
 import axios, {Method} from 'axios'
 
 const apiInstance = axios.create({
-	baseURL: 'http://localhost:9500/api'
+	baseURL: 'https://mlf.api.serjleodev.ru'
 })
 
 apiInstance.interceptors.request.use ((config) => {
