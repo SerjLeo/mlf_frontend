@@ -1,3 +1,5 @@
+import {Currency} from "@/redux/currency/types";
+
 export enum UserActionTypes {
     GET_PROFILE = 'GET_PROFILE',
     AUTH_STARTED = 'AUTH_STARTED',
@@ -9,6 +11,7 @@ export enum UserActionTypes {
 export type User = {
     name: string
     email: string
+    currency: Currency
 }
 
 export type UserState = {

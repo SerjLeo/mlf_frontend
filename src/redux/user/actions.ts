@@ -41,3 +41,7 @@ export const signOut = () => async (dispatch: Dispatch<UserAction>) => {
 	localStorage.removeItem('token')
 	dispatch({ type: UserActionTypes.LOGOUT })
 }
+
+export const getProfile = () => async (dispatch: Dispatch<UserAction>) => {
+	dispatch({ type: UserActionTypes.GET_PROFILE })
+}

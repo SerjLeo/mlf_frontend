@@ -1,11 +1,12 @@
 import {Category} from '../categoriesList/types'
+import {Currency} from "@/redux/currency/types";
 
 export type Transaction = {
     transaction_id: number
     amount: number
     description: string
     type: boolean
-    currency: string
+    currency: Currency
     created_at: string
     categories?: Category[]
 }

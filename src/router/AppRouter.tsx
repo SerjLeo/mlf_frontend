@@ -16,6 +16,7 @@ const FastSignUp = React.lazy(() => import('../pages/Auth/FastSignUp'))
 const RestorePassword = React.lazy(() => import('../pages/Auth/RestorePassword'))
 const CategoriesList = React.lazy(() => import('../pages/CategoriesPage/CategoriesPage'))
 const CategoryPage = React.lazy(() => import('../pages/CategoryPage/CategoryPage'))
+const ProfilePage = React.lazy(() => import('../pages/Profile/Profile'))
 
 const AppRouter = () => {
 	const {isAuth, initialLoading} = useTypedSelector(state => state.user)
@@ -65,6 +66,7 @@ const AppRouter = () => {
 				element={<GuardedRoute isAuth={isAuth}><MainLayout/></GuardedRoute>}
 			>
 				<Route path="dashboard" element={<Dashboard/>}/>
+				<Route path="profile" element={<ProfilePage/>}/>
 				<Route path="categories" element={<CategoriesList/>}>
 					<Route path="create" element={<CreateCategoryForm/>}/>
 					<Route path=":categoryId" element={<CategoryPage/>}/>
