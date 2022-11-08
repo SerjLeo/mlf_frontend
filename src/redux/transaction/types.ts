@@ -5,6 +5,7 @@ export type Transaction = {
     amount: number
     description: string
     type: boolean
+    currency: string
     created_at: string
     categories?: Category[]
 }

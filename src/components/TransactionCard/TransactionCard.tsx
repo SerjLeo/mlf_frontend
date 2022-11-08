@@ -15,7 +15,7 @@ const TransactionCard: React.FC<TransactionCardProps> = ({transaction}) => {
 					`${styles.card__amount}
 					${transaction.type ? styles.transaction__positive : styles.transaction__negative}
 					`}
-			>{transaction.amount}</div>
+			>{transaction.amount + ' ' + transaction.currency}</div>
 			<div className={styles.card__description}>{transaction.description}</div>
 			<div className={styles.card__time}>{DateBuilder(transaction.created_at)}</div>
 		</div>
