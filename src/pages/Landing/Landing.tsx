@@ -6,7 +6,7 @@ import styles from './styles/Landing.module.scss'
 const Landing: React.FC = () => {
 
 	return (
-		<div>
+		<div className={styles.landing}>
 			<div>
 				Here is awesome picture
 			</div>
