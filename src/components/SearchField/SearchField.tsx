@@ -1,5 +1,5 @@
-import React, {ChangeEvent, useState} from 'react'
-import {InputAdornment, TextField} from '@mui/material'
+import React, { ChangeEvent, useState } from 'react'
+import { InputAdornment, TextField } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
 
 type SearchFieldProps = {

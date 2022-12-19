@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react'
-import {Link, Outlet, useNavigate, useParams} from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Link, Outlet, useNavigate, useParams } from 'react-router-dom'
 import Spinner from '../../components/Spinner/Spinner'
 import useTypedSelector from '../../hooks/useTypedSelector'
 import styles from './styles/CategoriesPage.module.scss'

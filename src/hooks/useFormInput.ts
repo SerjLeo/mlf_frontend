@@ -1,6 +1,6 @@
-import {ChangeEvent, FormEventHandler, useState} from 'react'
-import {InputValidator} from '../utils/Validators'
-import {InputConverter,} from '../utils/Converters'
+import { ChangeEvent, FormEventHandler, useState } from 'react'
+import { InputValidator } from '../utils/Validators'
+import { InputConverter, } from '../utils/Converters'
 
 export default function useFormInput<T extends Record<string, unknown>, K extends keyof T>(initialValue: T) {
 	const [ form, setForm ] = useState(initialValue)

@@ -1,5 +1,5 @@
-import {Dispatch} from 'redux'
-import {CategoryActions, CategoryActionTypes, CreateCategoryForm} from './types'
+import { Dispatch } from 'redux'
+import { CategoryActions, CategoryActionTypes, CreateCategoryForm } from './types'
 import ApiService from '../../api/ApiService'
 
 export const getCategoryById = (id: number) => async (dispatch: Dispatch<CategoryActions>) => {

@@ -1,8 +1,8 @@
 import React from 'react'
 import useFormInput from '../../hooks/useFormInput'
 import styles from '../../assets/styles/Pages/Form.module.scss'
-import {Button, TextField} from '@mui/material'
-import {Link} from 'react-router-dom'
+import { Button, TextField } from '@mui/material'
+import { Link } from 'react-router-dom'
 
 const FastSignUp: React.FC = () => {
 	const { getFormFieldProps, onFormSubmit } = useFormInput({

@@ -1,6 +1,6 @@
 import React from 'react'
 import CategoryLabel from './CategoryLabel'
-import {Category} from '../../../redux/categoriesList/types'
+import { Category } from '../../../redux/categoriesList/types'
 import styles from '../styles/CategoriesList.module.scss'
 
 type CategoriesListProps = {

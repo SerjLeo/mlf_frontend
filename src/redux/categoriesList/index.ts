@@ -1,4 +1,4 @@
-import {CategoriesActionTypes, CategoriesListActions, CategoriesListState} from './types'
+import { CategoriesActionTypes, CategoriesListActions, CategoriesListState } from './types'
 import CategoriesStateFactory from './store'
 
 const initialState: CategoriesListState = CategoriesStateFactory()

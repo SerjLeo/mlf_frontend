@@ -1,4 +1,4 @@
-import {TransactionActionTypes, TransactionsActions, TransactionState} from './types'
+import { TransactionActionTypes, TransactionsActions, TransactionState } from './types'
 import TransactionStateFactory from './store'
 
 const initialState: TransactionState = TransactionStateFactory()

@@ -1,4 +1,4 @@
-import {TransactionState} from './types'
+import { TransactionState } from './types'
 
 const TransactionStateFactory: () => TransactionState = () => ({
 	transactionLoading: false,

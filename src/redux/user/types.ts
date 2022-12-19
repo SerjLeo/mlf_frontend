@@ -1,4 +1,4 @@
-import {Currency} from '@/redux/currency/types'
+import { Currency } from '@/redux/currency/types'
 
 export enum UserActionTypes {
     EDIT_PROFILE = 'EDIT_PROFILE',

@@ -1,4 +1,4 @@
-import {CategoriesListState} from './types'
+import { CategoriesListState } from './types'
 
 const CategoriesStateFactory: () => CategoriesListState = () => ({
 	loading: true,

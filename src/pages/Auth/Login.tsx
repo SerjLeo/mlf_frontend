@@ -1,11 +1,11 @@
 import React from 'react'
 import useFormInput from '../../hooks/useFormInput'
-import {Button, TextField} from '@mui/material'
-import {Link} from 'react-router-dom'
+import { Button, TextField } from '@mui/material'
+import { Link } from 'react-router-dom'
 import styles from '../../assets/styles/Pages/Form.module.scss'
 import useTypedSelector from '../../hooks/useTypedSelector'
 import useActions from '../../hooks/useActions'
-import {UserSignInForm} from '../../redux/user/types'
+import { UserSignInForm } from '../../redux/user/types'
 
 const Login: React.FC = () => {
 	const { loading } = useTypedSelector(state => state.user)

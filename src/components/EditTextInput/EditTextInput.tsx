@@ -1,9 +1,9 @@
-import React, {KeyboardEvent, useRef, useState} from 'react'
+import React, { KeyboardEvent, useRef, useState } from 'react'
 import styles from './EditTextInput.module.scss'
-import {IconButton, TextField} from '@mui/material'
+import { IconButton, TextField } from '@mui/material'
 import EditIcon from '@mui/icons-material/Edit'
 import useInput from '../../hooks/useInput'
-import {flushSync} from 'react-dom'
+import { flushSync } from 'react-dom'
 
 type EditTextInputProps = {
     initialValue: string | number

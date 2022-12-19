@@ -1,4 +1,4 @@
-import {CategoryState} from './types'
+import { CategoryState } from './types'
 
 const CategoryStateFactory: () => CategoryState = () => ({
 	category_id: null,

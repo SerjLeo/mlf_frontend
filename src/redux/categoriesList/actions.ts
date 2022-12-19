@@ -1,7 +1,7 @@
-import {Dispatch} from 'redux'
-import {CategoriesActionTypes, CategoriesListActions} from './types'
+import { Dispatch } from 'redux'
+import { CategoriesActionTypes, CategoriesListActions } from './types'
 import ApiService from '../../api/ApiService'
-import {RootState} from '../index'
+import { RootState } from '../index'
 
 export const getCategoriesList = () => async (dispatch: Dispatch<CategoriesListActions>, getState: () => RootState) => {
 	const { page, finishLoading } = getState().categoriesList

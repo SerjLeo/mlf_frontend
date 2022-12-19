@@ -1,4 +1,4 @@
-import {UserState} from './types'
+import { UserState } from './types'
 
 const UserStateFactory: () => UserState = () => ({
 	user: null,

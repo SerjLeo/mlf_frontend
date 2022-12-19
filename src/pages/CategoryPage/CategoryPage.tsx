@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import useTypedSelector from '../../hooks/useTypedSelector'
-import {useParams} from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import styles from './styles/CategoryPage.module.scss'
 import EditTextInput from '../../components/EditTextInput/EditTextInput'
 import useActions from '../../hooks/useActions'

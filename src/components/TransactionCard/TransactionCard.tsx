@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './TransactionCard.module.scss'
-import {Transaction} from '@/redux/transaction/types'
+import { Transaction } from '@/redux/transaction/types'
 import DateBuilder from '@utils/DateBuilder'
 
 type TransactionCardProps = {

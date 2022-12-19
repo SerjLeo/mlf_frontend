@@ -1,4 +1,4 @@
-import {UserAction, UserActionTypes, UserState} from './types'
+import { UserAction, UserActionTypes, UserState } from './types'
 import UserStateFactory from './store'
 
 const initialState: UserState = UserStateFactory()

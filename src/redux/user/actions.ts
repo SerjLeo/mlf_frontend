@@ -1,7 +1,7 @@
 import ApiService from '../../api/ApiService'
-import {User, UserAction, UserActionTypes, UserSignInForm, UserSignUpForm} from './types'
-import {Dispatch} from 'redux'
-import {AlertAction, AlertActionTypes} from '@/redux/alerts/types'
+import { User, UserAction, UserActionTypes, UserSignInForm, UserSignUpForm } from './types'
+import { Dispatch } from 'redux'
+import { AlertAction, AlertActionTypes } from '@/redux/alerts/types'
 
 export const signIn = (form: UserSignInForm) => async (dispatch: Dispatch<UserAction|AlertAction>) => {
 	dispatch({ type: UserActionTypes.AUTH_STARTED })

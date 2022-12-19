@@ -1,7 +1,7 @@
-import {Dispatch} from 'redux'
-import {CreateTransactionInputForm, TransactionActionTypes, TransactionsActions} from './types'
+import { Dispatch } from 'redux'
+import { CreateTransactionInputForm, TransactionActionTypes, TransactionsActions } from './types'
 import ApiService from '../../api/ApiService'
-import {RootState} from '@/redux'
+import { RootState } from '@/redux'
 
 export const getTransactionsById = (id: number) => async (dispatch: Dispatch<TransactionsActions>) => {
 	dispatch({ type: TransactionActionTypes.GET_TRANSACTION })
