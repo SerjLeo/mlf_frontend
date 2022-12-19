@@ -1,5 +1,5 @@
 import {Category} from '../categoriesList/types'
-import {Currency} from "@/redux/currency/types";
+import {Currency} from '@/redux/currency/types'
 
 export type Transaction = {
     transaction_id: number

@@ -1,6 +1,6 @@
 export enum Currencies {
-    '$' = "UNITED STATES DOLLAR",
-    '€' = "EURO",
-    '₺' = "TURKISH LIRA",
-    '₽' = "RUSSIAN RUBLE",
+    '$' = 'United States Dollar',
+    '€' = 'Euro',
+    '₺' = 'Turkish Lira',
+    '₽' = 'Russian Ruble',
 }

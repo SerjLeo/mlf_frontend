@@ -7,4 +7,12 @@
 .edit_input {
   display: flex;
   align-items: center;
+  position: relative;
+  min-height: 30px;
+}
+
+.edit_icon {
+  position: absolute;
+  top: 0;
+  right: -38px;
 }

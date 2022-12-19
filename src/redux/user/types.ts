@@ -1,7 +1,7 @@
-import {Currency} from "@/redux/currency/types";
+import {Currency} from '@/redux/currency/types'
 
 export enum UserActionTypes {
-    GET_PROFILE = 'GET_PROFILE',
+    EDIT_PROFILE = 'EDIT_PROFILE',
     AUTH_STARTED = 'AUTH_STARTED',
     AUTH_COMPLETED = 'AUTH_COMPLETED',
     AUTH_ERROR = 'AUTH_ERROR',
@@ -19,7 +19,6 @@ export type UserState = {
     isAuth: boolean
     loading: boolean
     initialLoading: boolean
-    error: string
 }
 
 export type UserSignInForm = {
@@ -45,12 +44,18 @@ type AuthErrorAction = {
     payload: { error: string }
 }
 
-type GetProfileAction = {
-    type: UserActionTypes.GET_PROFILE
+type EditProfileAction = {
+    type: UserActionTypes.EDIT_PROFILE
+    payload: { user: User }
 }
 
 type LogoutAction = {
     type: UserActionTypes.LOGOUT
 }
 
-export type UserAction = AuthCompleteAction | AuthStartedAction | AuthErrorAction | GetProfileAction | LogoutAction
+export type UserAction =
+    AuthCompleteAction |
+    AuthStartedAction |
+    AuthErrorAction |
+    EditProfileAction |
+    LogoutAction

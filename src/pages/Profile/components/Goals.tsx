@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 
 const Goals = () => {
-    return (
-        <div>
+	return (
+		<div>
            Goals
-        </div>
-    );
-};
+		</div>
+	)
+}
 
-export default Goals;
+export default Goals

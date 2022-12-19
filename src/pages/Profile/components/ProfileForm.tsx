@@ -1,13 +1,13 @@
-import React from 'react';
-import {Button} from "@mui/material";
+import React from 'react'
+import {Button} from '@mui/material'
 
 const ProfileForm = () => {
-    return (
-        <div>
+	return (
+		<div>
             Form
-            <Button>Submit</Button>
-        </div>
-    );
-};
+			<Button>Submit</Button>
+		</div>
+	)
+}
 
-export default ProfileForm;
+export default ProfileForm
