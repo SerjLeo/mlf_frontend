@@ -5,7 +5,6 @@ const UserStateFactory: () => UserState = () => ({
 	isAuth: false,
 	loading: false,
 	initialLoading: true,
-	error: ''
 })
 
 export default UserStateFactory

@@ -10,6 +10,11 @@ type CategoriesListProps = {
 }
 
 const CategoriesList: React.FC<CategoriesListProps> = ({categories, selectedId = null, onClick}) => {
+
+	const redirect = () => {
+
+	}
+
 	return (
 		<div className={styles.categories__list}>
 			{
@@ -19,6 +24,16 @@ const CategoriesList: React.FC<CategoriesListProps> = ({categories, selectedId =
 					category={category}
 					onClick={onClick}/>)
 			}
+			<CategoryLabel
+				category={{
+					name: 'Add new',
+					color: 'red',
+					category_id: 0,
+					created_at: ''
+				}}
+				selected={false}
+				onClick={redirect}
+			/>
 		</div>
 	)
 }

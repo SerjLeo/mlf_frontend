@@ -1,15 +1,23 @@
 import React, {useState} from 'react'
-import Box from '@mui/material/Box'
 import SwipeableDrawer from '@mui/material/SwipeableDrawer'
-import List from '@mui/material/List'
-import Divider from '@mui/material/Divider'
-import ListItem from '@mui/material/ListItem'
-import ListItemIcon from '@mui/material/ListItemIcon'
-import ListItemText from '@mui/material/ListItemText'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
-import InboxIcon from '@mui/icons-material/Inbox'
-import MailIcon from '@mui/icons-material/Mail'
 import {IconButton} from '@mui/material'
+import menuItems from '@components/Menu/MenuItems'
+import {Link} from 'react-router-dom'
+import styles from './Menu.module.scss'
+import PersonIcon from '@mui/icons-material/Person'
+import DashboardIcon from '@mui/icons-material/Dashboard'
+import SwapHorizIcon from '@mui/icons-material/SwapHoriz'
+import CreditCardIcon from '@mui/icons-material/CreditCard'
+import PieChartIcon from '@mui/icons-material/PieChart'
+
+const ICON_MAP = {
+	dashboard: DashboardIcon,
+	profile: PersonIcon,
+	transactions: SwapHorizIcon,
+	accounts: CreditCardIcon,
+	categories: PieChartIcon
+}
 
 const Menu: React.FC = () => {
 	const [isOpen, setOpen] = useState(false)
@@ -23,30 +31,18 @@ const Menu: React.FC = () => {
 		setOpen(isOpen)
 	}
 
-	const list = () => (
-		<Box>
-			<List>
-				{['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-					<ListItem button key={text}>
-						<ListItemIcon>
-							{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-						</ListItemIcon>
-						<ListItemText primary={text} />
-					</ListItem>
-				))}
-			</List>
-			<Divider />
-			<List>
-				{['All mail', 'Trash', 'Spam'].map((text, index) => (
-					<ListItem button key={text}>
-						<ListItemIcon>
-							{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-						</ListItemIcon>
-						<ListItemText primary={text} />
-					</ListItem>
-				))}
-			</List>
-		</Box>
+	const menuList = () => (
+		menuItems.map(item => (
+			<Link
+				onClick={() => setOpen(false)}
+				className={styles.item}
+				key={item.link}
+				to={item.link}
+			>
+				{React.createElement(ICON_MAP[item.icon as keyof typeof ICON_MAP])}
+				{item.text}
+			</Link>
+		))
 	)
 
 	return (
@@ -60,7 +56,7 @@ const Menu: React.FC = () => {
 				onClose={toggleMenu(false)}
 				onOpen={toggleMenu(true)}
 			>
-				{list()}
+				{menuList()}
 			</SwipeableDrawer>
 		</div>
 	)

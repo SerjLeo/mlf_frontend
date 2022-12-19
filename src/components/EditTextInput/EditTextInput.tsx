@@ -36,7 +36,12 @@ const EditTextInput: React.FC<EditTextInputProps> = ({initialValue= '', onValueC
 			{
 				editMode
 					? <TextField variant="standard" onKeyDown={onKeyDown} onBlur={blurInput} {...inputProps} inputRef={inputRef}/>
-					: <div className={styles.edit_input}>{inputProps.value} <IconButton onClick={activateEditMode} size="small"><EditIcon fontSize="small"/></IconButton></div>
+					: <div className={styles.edit_input}>
+						{inputProps.value}
+						<IconButton className={styles.edit_icon} onClick={activateEditMode} size="small">
+							<EditIcon fontSize="small"/>
+						</IconButton>
+					</div>
 			}
 		</div>
 	)
