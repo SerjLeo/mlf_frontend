@@ -1,4 +1,4 @@
-import {TransactionActionTypes, TransactionsActions, TransactionState} from './types'
+import { TransactionActionTypes, TransactionsActions, TransactionState } from './types'
 import TransactionStateFactory from './store'
 
 const initialState: TransactionState = TransactionStateFactory()
@@ -19,16 +19,16 @@ const transactionReducer = (state = initialState, action: TransactionsActions): 
 	case TransactionActionTypes.TRANSACTION_LIST_ERROR:
 		return { ...state, transactionListLoading: false, error: action.payload.error }
 	case TransactionActionTypes.CLEAR_TRANSACTION_LIST:
-		return {...state, transactionListLoading: false, finishLoading: false, transactions: [], page: 1, error: ''}
+		return { ...state, transactionListLoading: false, finishLoading: false, transactions: [], page: 1, error: '' }
 
 	case TransactionActionTypes.GET_TRANSACTION:
-		return {...state, transactionLoading: true, error: ''}
+		return { ...state, transactionLoading: true, error: '' }
 	case TransactionActionTypes.TRANSACTION_SUCCESS:
-		return {...state, currentTransaction: action.payload.transaction, transactionLoading: false, error: ''}
+		return { ...state, currentTransaction: action.payload.transaction, transactionLoading: false, error: '' }
 	case TransactionActionTypes.TRANSACTION_ERROR:
-		return {...state, transactionLoading: false, error: action.payload.error}
+		return { ...state, transactionLoading: false, error: action.payload.error }
 	case TransactionActionTypes.CLEAR_TRANSACTION:
-		return {...state, transactionLoading: false, currentTransaction: null, error: ''}
+		return { ...state, transactionLoading: false, currentTransaction: null, error: '' }
 	default:
 		return state
 	}

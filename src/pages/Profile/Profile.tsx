@@ -2,21 +2,21 @@ import React from 'react'
 import styles from './styles/Profile.module.scss'
 import ProfileMenu from '@components/ProfileMenu/ProfileMenu'
 import useTypedSelector from '@hooks/useTypedSelector'
-import {Avatar, Button, Switch} from '@mui/material'
+import { Avatar, Button, Switch } from '@mui/material'
 import Spinner from '@components/Spinner/Spinner'
 import LockIcon from '@mui/icons-material/Lock'
 import NotificationsIcon from '@mui/icons-material/Notifications'
-import {Currencies} from '@utils/constants/currencies'
+import { Currencies } from '@utils/constants/currencies'
 import EditTextInput from '@components/EditTextInput/EditTextInput'
 import useActions from '@hooks/useActions'
 
 const Profile: React.FC = () => {
-	const {user, loading} = useTypedSelector(state => state.user)
+	const { user, loading } = useTypedSelector(state => state.user)
 
-	const {editProfile} = useActions()
+	const { editProfile } = useActions()
 
 	const onNameChange = async (name: string | number) => {
-		await editProfile({name: String(name)})
+		await editProfile({ name: String(name) })
 		console.log(name)
 	}
 
@@ -48,7 +48,7 @@ const Profile: React.FC = () => {
 				<Avatar
 					alt="Remy Sharp"
 					src="/static/images/avatar/1.jpg"
-					sx={{width: 100, height: 100}}
+					sx={{ width: 100, height: 100 }}
 				/>
 				{user.name && <div className={styles.infoName}>{user.name}</div>}
 				<EditTextInput initialValue={user.name} onValueChange={onNameChange}/>

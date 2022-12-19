@@ -1,6 +1,6 @@
 import React from 'react'
 import CategoryLabel from './CategoryLabel'
-import {Category} from '../../../redux/categoriesList/types'
+import { Category } from '../../../redux/categoriesList/types'
 import styles from '../styles/CategoriesList.module.scss'
 
 type CategoriesListProps = {
@@ -9,7 +9,7 @@ type CategoriesListProps = {
     onClick: (id: number) => void
 }
 
-const CategoriesList: React.FC<CategoriesListProps> = ({categories, selectedId = null, onClick}) => {
+const CategoriesList: React.FC<CategoriesListProps> = ({ categories, selectedId = null, onClick }) => {
 
 	const redirect = () => {
 

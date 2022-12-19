@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react'
-import {Link, Outlet, useNavigate, useParams} from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Link, Outlet, useNavigate, useParams } from 'react-router-dom'
 import Spinner from '../../components/Spinner/Spinner'
 import useTypedSelector from '../../hooks/useTypedSelector'
 import styles from './styles/CategoriesPage.module.scss'
@@ -7,14 +7,14 @@ import CategoriesList from './components/CategoriesList'
 import useActions from '../../hooks/useActions'
 
 const CategoriesPage: React.FC = () => {
-	const {getCategoriesList} = useActions()
+	const { getCategoriesList } = useActions()
 	const navigate = useNavigate()
-	const {categoryId} = useParams()
-	const {categories, loading} = useTypedSelector(state => state.categoriesList)
+	const { categoryId } = useParams()
+	const { categories, loading } = useTypedSelector(state => state.categoriesList)
 
 	useEffect(() => {
 		getCategoriesList()
-	}, [getCategoriesList])
+	}, [ getCategoriesList ])
 
 	const handleLabelClick = (id: number) => {
 		navigate(`/categories/${id}`)

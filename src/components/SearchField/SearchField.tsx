@@ -1,5 +1,5 @@
-import React, {ChangeEvent, useState} from 'react'
-import {InputAdornment, TextField} from '@mui/material'
+import React, { ChangeEvent, useState } from 'react'
+import { InputAdornment, TextField } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
 
 type SearchFieldProps = {
@@ -9,8 +9,8 @@ type SearchFieldProps = {
 	inputProps?: Record<string, unknown>
 }
 
-const SearchField: React.FC<SearchFieldProps> = React.memo(({onChange, initialValue = '', placeholder = 'Search...', inputProps = {}}) => {
-	const [search, setSearch] = useState(initialValue)
+const SearchField: React.FC<SearchFieldProps> = React.memo(({ onChange, initialValue = '', placeholder = 'Search...', inputProps = {} }) => {
+	const [ search, setSearch ] = useState(initialValue)
 	const onSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
 		setSearch(e.target.value)
 		onChange(e.target.value)

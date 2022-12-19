@@ -1,4 +1,4 @@
-import axios, {Method} from 'axios'
+import axios, { Method } from 'axios'
 
 const apiInstance = axios.create({
 	baseURL: 'https://mlf.api.serjleodev.ru'
@@ -22,7 +22,7 @@ export default class ApiService {
 			return response.data
 		} catch (e: unknown) {
 			// const error: ApiHTTPError = e
-			return {errors: e}
+			return { errors: e }
 		}
 	}
 }

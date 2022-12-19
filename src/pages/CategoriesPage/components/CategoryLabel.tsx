@@ -1,5 +1,5 @@
 import React from 'react'
-import {Category} from '../../../redux/categoriesList/types'
+import { Category } from '../../../redux/categoriesList/types'
 import styles from '../styles/CategoryLabel.module.scss'
 
 type CategoryLabelProps = {
@@ -8,9 +8,9 @@ type CategoryLabelProps = {
     onClick: (id: number) => void
 }
 
-const CategoryLabel: React.FC<CategoryLabelProps> = ({category, selected, onClick}) => {
+const CategoryLabel: React.FC<CategoryLabelProps> = ({ category, selected, onClick }) => {
 	return (
-		<div onClick={() => onClick(category.category_id)} className={styles.category_label} style={{backgroundColor: category.color, borderColor: selected ? 'black' : 'transparent'}}>
+		<div onClick={() => onClick(category.category_id)} className={styles.category_label} style={{ backgroundColor: category.color, borderColor: selected ? 'black' : 'transparent' }}>
 			{category.name}
 		</div>
 	)

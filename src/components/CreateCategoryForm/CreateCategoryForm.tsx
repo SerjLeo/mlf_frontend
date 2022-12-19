@@ -1,15 +1,15 @@
 import React from 'react'
-import {Button, TextField} from '@mui/material'
+import { Button, TextField } from '@mui/material'
 import styles from './CreateCategoryForm.module.scss'
 import useFormInput from '../../hooks/useFormInput'
 import useTypedSelector from '../../hooks/useTypedSelector'
 import useActions from '../../hooks/useActions'
-import {CreateCategoryForm} from '../../redux/categoryPage/types'
+import { CreateCategoryForm } from '../../redux/categoryPage/types'
 
 const CreateCategoryFormComponent: React.FC= () => {
-	const {loading} = useTypedSelector(state => state.user)
-	const {createCategory} = useActions()
-	const {getFormFieldProps, onFormSubmit} = useFormInput({
+	const { loading } = useTypedSelector(state => state.user)
+	const { createCategory } = useActions()
+	const { getFormFieldProps, onFormSubmit } = useFormInput({
 		name: '',
 		color: ''
 	})

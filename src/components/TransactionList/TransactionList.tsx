@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './TransactionList.module.scss'
-import {Transaction} from '@/redux/transaction/types'
+import { Transaction } from '@/redux/transaction/types'
 import Spinner from '../Spinner/Spinner'
 import TransactionCard from '../TransactionCard/TransactionCard'
 import NoData from '../NoData/NoData'
@@ -10,7 +10,7 @@ type TransactionListProps = {
     loading: boolean
 }
 
-const TransactionList: React.FC<TransactionListProps> = ({loading, transactions}) => {
+const TransactionList: React.FC<TransactionListProps> = ({ loading, transactions }) => {
 
 	const transactionsListView = () => (
 		transactions.length

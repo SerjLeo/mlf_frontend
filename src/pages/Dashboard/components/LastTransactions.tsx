@@ -1,27 +1,27 @@
-import React, {useCallback, useEffect, useState} from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import useTypedSelector from '@hooks/useTypedSelector'
 import useActions from '@hooks/useActions'
-import {CreateTransactionInputForm} from '@/redux/transaction/types'
+import { CreateTransactionInputForm } from '@/redux/transaction/types'
 import styles from '../styles/LastTransactions.module.scss'
 import TransactionList from '@components/TransactionList/TransactionList'
 import CreateTransactionForm from '@components/CrateTransactionForm/CreateTransactionForm'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import SearchField from '@components/SearchField/SearchField'
 import debounce from '@utils/Debounce'
 
 const LastTransactions: React.FC = () => {
-	const {transactionLoading, transactionListLoading, transactions} = useTypedSelector(state => state.transaction)
-	const {createTransaction, getInitialTransactionsList} = useActions()
+	const { transactionLoading, transactionListLoading, transactions } = useTypedSelector(state => state.transaction)
+	const { createTransaction, getInitialTransactionsList } = useActions()
 
-	const [search, setSearch] = useState('')
+	const [ search, setSearch ] = useState('')
 
 	useEffect(() => {
 		getInitialTransactionsList()
-	}, [getInitialTransactionsList])
+	}, [ getInitialTransactionsList ])
 
 	useEffect(() => {
 		console.log(search)
-	}, [search])
+	}, [ search ])
 
 	const onSearch = useCallback(debounce((searchString: string) => {
 		setSearch(searchString)
@@ -43,7 +43,7 @@ const LastTransactions: React.FC = () => {
 					<CreateTransactionForm loading={transactionLoading} onTransactionCreation={handleTransactionCreation}/>
 				</div>
 				<div className={styles.transactions__search}>
-					<SearchField onChange={onSearch} inputProps={{size: 'small', fullWidth: true}}/>
+					<SearchField onChange={onSearch} inputProps={{ size: 'small', fullWidth: true }}/>
 				</div>
 				<div className={styles.transactions__list}>
 					<TransactionList transactions={transactions} loading={transactionListLoading}/>

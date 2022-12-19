@@ -1,7 +1,7 @@
 import React from 'react'
-import {Button} from '@mui/material'
+import { Button } from '@mui/material'
 
-const ProfileForm = () => {
+const ProfileForm: React.FC = () => {
 	return (
 		<div>
             Form

@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from '../styles/DashboardStatistics.module.scss'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const DashboardStatistics: React.FC = () => {
 	return (

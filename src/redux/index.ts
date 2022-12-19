@@ -1,4 +1,4 @@
-import {applyMiddleware, combineReducers, createStore} from 'redux'
+import { applyMiddleware, combineReducers, createStore } from 'redux'
 import userReducer from './user'
 import categoriesListReducer from './categoriesList'
 import categoryReducer from './categoryPage'

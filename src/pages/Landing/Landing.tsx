@@ -1,6 +1,6 @@
 import React from 'react'
-import {Button} from '@mui/material'
-import {Link} from 'react-router-dom'
+import { Button } from '@mui/material'
+import { Link } from 'react-router-dom'
 import styles from './styles/Landing.module.scss'
 
 const Landing: React.FC = () => {

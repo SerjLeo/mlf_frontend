@@ -1,5 +1,5 @@
-import {Category} from '../categoriesList/types'
-import {Nullable} from '../../utils/types'
+import { Category } from '../categoriesList/types'
+import { Nullable } from '../../utils/types'
 
 export type CategoryState = Nullable<Category> & {
     loading: boolean

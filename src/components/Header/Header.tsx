@@ -1,8 +1,8 @@
 import React from 'react'
 import styles from './Header.module.scss'
 import Menu from '../Menu/Menu'
-import {Button, IconButton} from '@mui/material'
-import {Link} from 'react-router-dom'
+import { Button, IconButton } from '@mui/material'
+import { Link } from 'react-router-dom'
 import LoginIcon from '@mui/icons-material/Login'
 import LogoutIcon from '@mui/icons-material/Logout'
 import PersonIcon from '@mui/icons-material/Person'
@@ -11,8 +11,8 @@ import useTypedSelector from '../../hooks/useTypedSelector'
 import useActions from '../../hooks/useActions'
 
 const Header: React.FC = () => {
-	const {isAuth} = useTypedSelector(state => state.user)
-	const {signOut} = useActions()
+	const { isAuth } = useTypedSelector(state => state.user)
+	const { signOut } = useActions()
 	const windowWidth = useWindowWidth()
 
 	const nonAuthLinks = () => {

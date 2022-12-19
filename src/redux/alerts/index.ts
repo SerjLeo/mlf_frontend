@@ -1,6 +1,6 @@
-import {AlertAction, AlertActionTypes, AlertsState, AlertTypes} from './types'
+import { AlertAction, AlertActionTypes, AlertsState, AlertTypes } from './types'
 import UserStateFactory from './store'
-import {v4 as uuidv4} from 'uuid'
+import { v4 as uuidv4 } from 'uuid'
 
 const initialState: AlertsState = UserStateFactory()
 

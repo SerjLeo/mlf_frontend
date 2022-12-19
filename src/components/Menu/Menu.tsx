@@ -1,9 +1,9 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import SwipeableDrawer from '@mui/material/SwipeableDrawer'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
-import {IconButton} from '@mui/material'
+import { IconButton } from '@mui/material'
 import menuItems from '@components/Menu/MenuItems'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import styles from './Menu.module.scss'
 import PersonIcon from '@mui/icons-material/Person'
 import DashboardIcon from '@mui/icons-material/Dashboard'
@@ -20,7 +20,7 @@ const ICON_MAP = {
 }
 
 const Menu: React.FC = () => {
-	const [isOpen, setOpen] = useState(false)
+	const [ isOpen, setOpen ] = useState(false)
 
 	const toggleMenu = (isOpen: boolean) => (event: React.KeyboardEvent) => {
 		if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) return

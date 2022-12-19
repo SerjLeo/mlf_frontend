@@ -1,4 +1,4 @@
-import {render, screen, fireEvent} from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
 import CreateTransactionForm from './CreateTransactionForm'
 import userEvent from '@testing-library/user-event'
 import styles from './CreateTransactionForm.module.scss'

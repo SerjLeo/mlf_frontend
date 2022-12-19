@@ -2,15 +2,15 @@ import React from 'react'
 
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz'
-import {IconButton, Menu, MenuItem} from '@mui/material'
+import { IconButton, Menu, MenuItem } from '@mui/material'
 import useActions from '@hooks/useActions'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import styles from './ProfileMenu.module.scss'
 
 const ProfileMenu: React.FC = () => {
-	const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
+	const [ anchorEl, setAnchorEl ] = React.useState<null | HTMLElement>(null)
 	const open = Boolean(anchorEl)
-	const {signOut} = useActions()
+	const { signOut } = useActions()
 
 	const handleMenuOpen = (event: React.MouseEvent<HTMLButtonElement>) => {
 		setAnchorEl(event.currentTarget)

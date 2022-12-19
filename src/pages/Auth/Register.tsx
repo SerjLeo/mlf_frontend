@@ -1,17 +1,17 @@
 import React from 'react'
 import useFormInput from '../../hooks/useFormInput'
-import {Button, TextField} from '@mui/material'
-import {Link} from 'react-router-dom'
+import { Button, TextField } from '@mui/material'
+import { Link } from 'react-router-dom'
 import styles from '../../assets/styles/Pages/Form.module.scss'
 import useTypedSelector from '../../hooks/useTypedSelector'
 import useActions from '../../hooks/useActions'
-import {UserSignUpForm} from '../../redux/user/types'
+import { UserSignUpForm } from '../../redux/user/types'
 
 const Register = React.memo(() => {
-	const {loading} = useTypedSelector(state => state.user)
-	const {signUp} = useActions()
+	const { loading } = useTypedSelector(state => state.user)
+	const { signUp } = useActions()
 
-	const {getFormFieldProps, onFormSubmit} = useFormInput({
+	const { getFormFieldProps, onFormSubmit } = useFormInput({
 		name: '',
 		email: '',
 		password: ''

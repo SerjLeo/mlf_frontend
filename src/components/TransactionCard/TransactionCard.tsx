@@ -1,13 +1,13 @@
 import React from 'react'
 import styles from './TransactionCard.module.scss'
-import {Transaction} from '@/redux/transaction/types'
+import { Transaction } from '@/redux/transaction/types'
 import DateBuilder from '@utils/DateBuilder'
 
 type TransactionCardProps = {
     transaction: Transaction
 }
 
-const TransactionCard: React.FC<TransactionCardProps> = ({transaction}) => {
+const TransactionCard: React.FC<TransactionCardProps> = ({ transaction }) => {
 	return (
 		<div className={styles.transaction_card__wrap}>
 			<div

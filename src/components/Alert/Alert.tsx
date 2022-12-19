@@ -1,11 +1,11 @@
 import React from 'react'
 import useTypedSelector from '@hooks/useTypedSelector'
-import {Snackbar, Alert as MUIAlert} from '@mui/material'
-import {useDispatch} from 'react-redux'
-import {AlertActionTypes} from '@/redux/alerts/types'
+import { Alert as MUIAlert, Snackbar } from '@mui/material'
+import { useDispatch } from 'react-redux'
+import { AlertActionTypes } from '@/redux/alerts/types'
 
-const Alert = () => {
-	const {alerts} = useTypedSelector(state => state.alert)
+const Alert: React.FC = () => {
+	const { alerts } = useTypedSelector(state => state.alert)
 	const dispatch = useDispatch()
 
 	const removeAlert = (id: string) => {

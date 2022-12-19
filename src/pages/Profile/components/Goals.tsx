@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Goals = () => {
+const Goals: React.FC = () => {
 	return (
 		<div>
            Goals
