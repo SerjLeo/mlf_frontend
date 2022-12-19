@@ -1,4 +1,4 @@
-import {AlertsState} from './types'
+import { AlertsState } from './types'
 
 const UserStateFactory: () => AlertsState = () => ({
 	alerts: []
