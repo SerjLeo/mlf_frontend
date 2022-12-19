@@ -20,7 +20,7 @@ const ICON_MAP = {
 }
 
 const Menu: React.FC = () => {
-	const [isOpen, setOpen] = useState(false)
+	const [ isOpen, setOpen ] = useState(false)
 
 	const toggleMenu = (isOpen: boolean) => (event: React.KeyboardEvent) => {
 		if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) return

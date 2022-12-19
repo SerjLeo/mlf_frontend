@@ -11,7 +11,7 @@ type EditTextInputProps = {
 }
 
 const EditTextInput: React.FC<EditTextInputProps> = ({initialValue= '', onValueChange}) => {
-	const [editMode, setEditMode] = useState(false)
+	const [ editMode, setEditMode ] = useState(false)
 	const inputProps = useInput(initialValue)
 	const inputRef = useRef<HTMLInputElement>(null)
 

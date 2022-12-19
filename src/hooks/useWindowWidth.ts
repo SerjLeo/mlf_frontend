@@ -6,7 +6,7 @@ const getWidth = () => window.innerWidth
     || document.body.clientWidth
 
 export default function useWindowWidth() {
-	const [width, setWidth] = useState(getWidth())
+	const [ width, setWidth ] = useState(getWidth())
 
 	useEffect(() => {
 		const resizeListener = Debounce(() => {

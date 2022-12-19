@@ -14,7 +14,7 @@ const CategoriesPage: React.FC = () => {
 
 	useEffect(() => {
 		getCategoriesList()
-	}, [getCategoriesList])
+	}, [ getCategoriesList ])
 
 	const handleLabelClick = (id: number) => {
 		navigate(`/categories/${id}`)

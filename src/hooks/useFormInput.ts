@@ -3,7 +3,7 @@ import {InputValidator} from '../utils/Validators'
 import {InputConverter,} from '../utils/Converters'
 
 export default function useFormInput<T extends Record<string, unknown>, K extends keyof T>(initialValue: T) {
-	const [form, setForm] = useState(initialValue)
+	const [ form, setForm ] = useState(initialValue)
 
 	const getFormFieldProps = <U>(fieldName: K, converter?: InputConverter<U>, validators: InputValidator<U>[] = [], validationErrorCallback: (error: string) => void = () =>  {}) => {
 		return {

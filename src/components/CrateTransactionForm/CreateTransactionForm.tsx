@@ -67,7 +67,7 @@ const CreateTransactionForm: React.FC<CreateTransactionFormProps> = ({
 						variant="outlined"
 						type="number"
 						inputProps={{min: 0, max: 1000000}}
-						{...getFormFieldProps('amount', numberConverter, [maxNumberValue(1000000), minNumberValue(0)])}
+						{...getFormFieldProps('amount', numberConverter, [ maxNumberValue(1000000), minNumberValue(0) ])}
 						required className={styles.form__input_amount}
 					/>
 					<TextField

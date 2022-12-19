@@ -13,15 +13,15 @@ const LastTransactions: React.FC = () => {
 	const {transactionLoading, transactionListLoading, transactions} = useTypedSelector(state => state.transaction)
 	const {createTransaction, getInitialTransactionsList} = useActions()
 
-	const [search, setSearch] = useState('')
+	const [ search, setSearch ] = useState('')
 
 	useEffect(() => {
 		getInitialTransactionsList()
-	}, [getInitialTransactionsList])
+	}, [ getInitialTransactionsList ])
 
 	useEffect(() => {
 		console.log(search)
-	}, [search])
+	}, [ search ])
 
 	const onSearch = useCallback(debounce((searchString: string) => {
 		setSearch(searchString)

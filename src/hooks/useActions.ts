@@ -15,7 +15,7 @@ const allActions = {
 
 const useActions = () => {
 	const dispatch = useDispatch()
-	return useMemo(() => bindActionCreators(allActions, dispatch), [dispatch])
+	return useMemo(() => bindActionCreators(allActions, dispatch), [ dispatch ])
 }
 
 export default useActions

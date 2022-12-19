@@ -16,7 +16,7 @@ const CategoryPage: React.FC = () => {
 
 	useEffect(() => {
 		getCategoryById(Number(categoryId))
-	}, [getCategoryById, categoryId])
+	}, [ getCategoryById, categoryId ])
 	return (
 		<div className={styles.category_page__wrap}>
 			<div className={styles.category_page__info}>

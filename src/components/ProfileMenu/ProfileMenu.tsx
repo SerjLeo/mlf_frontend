@@ -8,7 +8,7 @@ import {Link} from 'react-router-dom'
 import styles from './ProfileMenu.module.scss'
 
 const ProfileMenu: React.FC = () => {
-	const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
+	const [ anchorEl, setAnchorEl ] = React.useState<null | HTMLElement>(null)
 	const open = Boolean(anchorEl)
 	const {signOut} = useActions()
 

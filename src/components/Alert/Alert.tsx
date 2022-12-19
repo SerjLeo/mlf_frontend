@@ -4,7 +4,7 @@ import {Snackbar, Alert as MUIAlert} from '@mui/material'
 import {useDispatch} from 'react-redux'
 import {AlertActionTypes} from '@/redux/alerts/types'
 
-const Alert = () => {
+const Alert: React.FC = () => {
 	const {alerts} = useTypedSelector(state => state.alert)
 	const dispatch = useDispatch()
 
