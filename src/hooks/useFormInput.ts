@@ -1,4 +1,4 @@
-import {useState, ChangeEvent, FormEventHandler} from 'react'
+import {ChangeEvent, FormEventHandler, useState} from 'react'
 import {InputValidator} from '../utils/Validators'
 import {InputConverter,} from '../utils/Converters'
 
@@ -32,7 +32,7 @@ export default function useFormInput<T extends Record<string, unknown>, K extend
 		}
 	}
 
-	return {getFormFieldProps, onFormSubmit, setForm, form}
+	return { getFormFieldProps, onFormSubmit, setForm, form }
 }
 
 

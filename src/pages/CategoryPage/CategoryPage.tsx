@@ -6,12 +6,12 @@ import EditTextInput from '../../components/EditTextInput/EditTextInput'
 import useActions from '../../hooks/useActions'
 
 const CategoryPage: React.FC = () => {
-	const {getCategoryById, updateCategory} = useActions()
-	const {categoryId} = useParams()
-	const {name, color} = useTypedSelector(state => state.category)
+	const { getCategoryById, updateCategory } = useActions()
+	const { categoryId } = useParams()
+	const { name, color } = useTypedSelector(state => state.category)
 
 	const onFieldChange = (name: string) => (value: string | number) => {
-		updateCategory(Number(categoryId), {[name]: String(value)})
+		updateCategory(Number(categoryId), { [name]: String(value) })
 	}
 
 	useEffect(() => {

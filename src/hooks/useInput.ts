@@ -1,4 +1,4 @@
-import {useState, ChangeEvent} from 'react'
+import {ChangeEvent, useState} from 'react'
 
 export default function useInput (initialValue: string | number) {
 	const [ value, setValue ] = useState(initialValue)
@@ -7,5 +7,5 @@ export default function useInput (initialValue: string | number) {
 		setValue(e.target.value)
 	}
 
-	return {value, onChange}
+	return { value, onChange }
 }

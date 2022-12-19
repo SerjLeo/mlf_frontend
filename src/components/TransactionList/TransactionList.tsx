@@ -10,7 +10,7 @@ type TransactionListProps = {
     loading: boolean
 }
 
-const TransactionList: React.FC<TransactionListProps> = ({loading, transactions}) => {
+const TransactionList: React.FC<TransactionListProps> = ({ loading, transactions }) => {
 
 	const transactionsListView = () => (
 		transactions.length

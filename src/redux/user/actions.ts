@@ -5,25 +5,25 @@ import {AlertAction, AlertActionTypes} from '@/redux/alerts/types'
 
 export const signIn = (form: UserSignInForm) => async (dispatch: Dispatch<UserAction|AlertAction>) => {
 	dispatch({ type: UserActionTypes.AUTH_STARTED })
-	const {data, errors} = await ApiService.apiRequest('/auth/sign-in', 'POST', form)
+	const { data, errors } = await ApiService.apiRequest('/auth/sign-in', 'POST', form)
 	if(errors) {
-		dispatch({type: UserActionTypes.AUTH_ERROR, payload: {error: 'Error'}})
+		dispatch({ type: UserActionTypes.AUTH_ERROR, payload: { error: 'Error' } })
 		return
 	}
 	localStorage.setItem('token', `Bearer ${data}`)
-	dispatch({type: UserActionTypes.AUTH_COMPLETED, payload: {user: data}})
+	dispatch({ type: UserActionTypes.AUTH_COMPLETED, payload: { user: data } })
 }
 
 export const signUp = (form: UserSignUpForm) => async (dispatch: Dispatch<UserAction|AlertAction>) => {
 	dispatch({ type: UserActionTypes.AUTH_STARTED })
-	const {data, errors} = await ApiService.apiRequest('/auth/sign-up', 'POST', form)
+	const { data, errors } = await ApiService.apiRequest('/auth/sign-up', 'POST', form)
 	if(errors) {
-		dispatch({type: AlertActionTypes.ERROR, payload: {msg: ''} })
-		dispatch({type: UserActionTypes.AUTH_ERROR, payload: {error: 'Error'}})
+		dispatch({ type: AlertActionTypes.ERROR, payload: { msg: '' } })
+		dispatch({ type: UserActionTypes.AUTH_ERROR, payload: { error: 'Error' } })
 		return
 	}
 	localStorage.setItem('token', `Bearer ${data}`)
-	dispatch({type: UserActionTypes.AUTH_COMPLETED, payload: {user: data}})
+	dispatch({ type: UserActionTypes.AUTH_COMPLETED, payload: { user: data } })
 }
 
 export const checkoutAuthToken = () => async (dispatch: Dispatch<UserAction|AlertAction>) => {
@@ -31,12 +31,12 @@ export const checkoutAuthToken = () => async (dispatch: Dispatch<UserAction|Aler
 		dispatch({ type: UserActionTypes.LOGOUT })
 		return
 	}
-	const {data, errors} = await ApiService.apiRequest('/auth/check', 'GET')
+	const { data, errors } = await ApiService.apiRequest('/auth/check', 'GET')
 	if (errors) {
-		dispatch({type: UserActionTypes.AUTH_ERROR, payload: {error: 'Error'}})
+		dispatch({ type: UserActionTypes.AUTH_ERROR, payload: { error: 'Error' } })
 		return
 	}
-	dispatch({type: UserActionTypes.AUTH_COMPLETED, payload: {user: data}})
+	dispatch({ type: UserActionTypes.AUTH_COMPLETED, payload: { user: data } })
 }
 
 export const signOut = () => async (dispatch: Dispatch<UserAction>) => {
@@ -45,11 +45,11 @@ export const signOut = () => async (dispatch: Dispatch<UserAction>) => {
 }
 
 export const editProfile = (fields: Partial<User>) => async (dispatch: Dispatch<UserAction|AlertAction>) => {
-	const {data, errors} = await ApiService.apiRequest('/user/profile', 'PUT', {fields})
+	const { data, errors } = await ApiService.apiRequest('/user/profile', 'PUT', { fields })
 	if (errors) {
-		dispatch({type: AlertActionTypes.ERROR, payload: {msg: 'Server error'}})
+		dispatch({ type: AlertActionTypes.ERROR, payload: { msg: 'Server error' } })
 		return
 	}
-	dispatch({ type: UserActionTypes.EDIT_PROFILE, payload: {user: data} })
-	dispatch({type: AlertActionTypes.SUCCESS, payload: {msg: 'Changes applied'}})
+	dispatch({ type: UserActionTypes.EDIT_PROFILE, payload: { user: data } })
+	dispatch({ type: AlertActionTypes.SUCCESS, payload: { msg: 'Changes applied' } })
 }

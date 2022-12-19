@@ -1,4 +1,4 @@
-import React, {useRef, useState, KeyboardEvent} from 'react'
+import React, {KeyboardEvent, useRef, useState} from 'react'
 import styles from './EditTextInput.module.scss'
 import {IconButton, TextField} from '@mui/material'
 import EditIcon from '@mui/icons-material/Edit'
@@ -10,7 +10,7 @@ type EditTextInputProps = {
     onValueChange: (value: string | number) => void
 }
 
-const EditTextInput: React.FC<EditTextInputProps> = ({initialValue= '', onValueChange}) => {
+const EditTextInput: React.FC<EditTextInputProps> = ({ initialValue= '', onValueChange }) => {
 	const [ editMode, setEditMode ] = useState(false)
 	const inputProps = useInput(initialValue)
 	const inputRef = useRef<HTMLInputElement>(null)

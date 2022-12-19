@@ -8,10 +8,10 @@ import useActions from '../../hooks/useActions'
 import {UserSignInForm} from '../../redux/user/types'
 
 const Login: React.FC = () => {
-	const {loading} = useTypedSelector(state => state.user)
-	const {signIn} = useActions()
+	const { loading } = useTypedSelector(state => state.user)
+	const { signIn } = useActions()
 
-	const {getFormFieldProps, onFormSubmit} = useFormInput({
+	const { getFormFieldProps, onFormSubmit } = useFormInput({
 		email: '',
 		password: ''
 	})

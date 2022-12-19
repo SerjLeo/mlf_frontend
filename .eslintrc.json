@@ -31,6 +31,8 @@
         "eqeqeq": ["error", "always"],
         "block-spacing": ["error", "always"],
         "array-bracket-spacing": ["error", "always"],
+        "object-curly-spacing": ["error", "always"],
+        "arrow-spacing": ["error", { "before": true, "after": true }],
         "@typescript-eslint/no-empty-function": 0,
         "react/display-name": 0,
         "react/prop-types": 0,

@@ -9,7 +9,7 @@ type SearchFieldProps = {
 	inputProps?: Record<string, unknown>
 }
 
-const SearchField: React.FC<SearchFieldProps> = React.memo(({onChange, initialValue = '', placeholder = 'Search...', inputProps = {}}) => {
+const SearchField: React.FC<SearchFieldProps> = React.memo(({ onChange, initialValue = '', placeholder = 'Search...', inputProps = {} }) => {
 	const [ search, setSearch ] = useState(initialValue)
 	const onSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
 		setSearch(e.target.value)

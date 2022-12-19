@@ -11,8 +11,8 @@ import useTypedSelector from '../../hooks/useTypedSelector'
 import useActions from '../../hooks/useActions'
 
 const Header: React.FC = () => {
-	const {isAuth} = useTypedSelector(state => state.user)
-	const {signOut} = useActions()
+	const { isAuth } = useTypedSelector(state => state.user)
+	const { signOut } = useActions()
 	const windowWidth = useWindowWidth()
 
 	const nonAuthLinks = () => {

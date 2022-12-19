@@ -19,7 +19,7 @@ const CategoryPage = React.lazy(() => import('../pages/CategoryPage/CategoryPage
 const ProfilePage = React.lazy(() => import('../pages/Profile/Profile'))
 
 const AppRouter = () => {
-	const {isAuth, initialLoading} = useTypedSelector(state => state.user)
+	const { isAuth, initialLoading } = useTypedSelector(state => state.user)
 
 	if (initialLoading) return (
 		<Routes>

@@ -8,10 +8,10 @@ import useActions from '../../hooks/useActions'
 import {UserSignUpForm} from '../../redux/user/types'
 
 const Register = React.memo(() => {
-	const {loading} = useTypedSelector(state => state.user)
-	const {signUp} = useActions()
+	const { loading } = useTypedSelector(state => state.user)
+	const { signUp } = useActions()
 
-	const {getFormFieldProps, onFormSubmit} = useFormInput({
+	const { getFormFieldProps, onFormSubmit } = useFormInput({
 		name: '',
 		email: '',
 		password: ''

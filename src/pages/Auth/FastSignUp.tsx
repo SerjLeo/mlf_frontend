@@ -5,7 +5,7 @@ import {Button, TextField} from '@mui/material'
 import {Link} from 'react-router-dom'
 
 const FastSignUp: React.FC = () => {
-	const {getFormFieldProps, onFormSubmit} = useFormInput({
+	const { getFormFieldProps, onFormSubmit } = useFormInput({
 		email: ''
 	})
 

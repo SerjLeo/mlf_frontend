@@ -10,8 +10,8 @@ import SearchField from '@components/SearchField/SearchField'
 import debounce from '@utils/Debounce'
 
 const LastTransactions: React.FC = () => {
-	const {transactionLoading, transactionListLoading, transactions} = useTypedSelector(state => state.transaction)
-	const {createTransaction, getInitialTransactionsList} = useActions()
+	const { transactionLoading, transactionListLoading, transactions } = useTypedSelector(state => state.transaction)
+	const { createTransaction, getInitialTransactionsList } = useActions()
 
 	const [ search, setSearch ] = useState('')
 
@@ -43,7 +43,7 @@ const LastTransactions: React.FC = () => {
 					<CreateTransactionForm loading={transactionLoading} onTransactionCreation={handleTransactionCreation}/>
 				</div>
 				<div className={styles.transactions__search}>
-					<SearchField onChange={onSearch} inputProps={{size: 'small', fullWidth: true}}/>
+					<SearchField onChange={onSearch} inputProps={{ size: 'small', fullWidth: true }}/>
 				</div>
 				<div className={styles.transactions__list}>
 					<TransactionList transactions={transactions} loading={transactionListLoading}/>

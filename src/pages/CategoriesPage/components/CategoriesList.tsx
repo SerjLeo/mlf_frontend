@@ -9,7 +9,7 @@ type CategoriesListProps = {
     onClick: (id: number) => void
 }
 
-const CategoriesList: React.FC<CategoriesListProps> = ({categories, selectedId = null, onClick}) => {
+const CategoriesList: React.FC<CategoriesListProps> = ({ categories, selectedId = null, onClick }) => {
 
 	const redirect = () => {
 

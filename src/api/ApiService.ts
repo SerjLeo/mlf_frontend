@@ -22,7 +22,7 @@ export default class ApiService {
 			return response.data
 		} catch (e: unknown) {
 			// const error: ApiHTTPError = e
-			return {errors: e}
+			return { errors: e }
 		}
 	}
 }

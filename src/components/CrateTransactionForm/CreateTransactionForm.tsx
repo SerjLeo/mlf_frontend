@@ -18,7 +18,7 @@ const CreateTransactionForm: React.FC<CreateTransactionFormProps> = ({
 	onTransactionCreation,
 	loading = false
 }) => {
-	const {getFormFieldProps, onFormSubmit, setForm, form} = useFormInput({
+	const { getFormFieldProps, onFormSubmit, setForm, form } = useFormInput({
 		amount: 0,
 		type: false,
 		description: ''
@@ -66,7 +66,7 @@ const CreateTransactionForm: React.FC<CreateTransactionFormProps> = ({
 						label='amount'
 						variant="outlined"
 						type="number"
-						inputProps={{min: 0, max: 1000000}}
+						inputProps={{ min: 0, max: 1000000 }}
 						{...getFormFieldProps('amount', numberConverter, [ maxNumberValue(1000000), minNumberValue(0) ])}
 						required className={styles.form__input_amount}
 					/>
@@ -74,7 +74,7 @@ const CreateTransactionForm: React.FC<CreateTransactionFormProps> = ({
 						size="small"
 						variant="outlined"
 						label='description'
-						inputProps={{maxLength: 75}}
+						inputProps={{ maxLength: 75 }}
 						{...getFormFieldProps('description')}
 						className={styles.form__input_description}
 					/>

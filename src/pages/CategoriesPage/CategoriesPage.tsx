@@ -7,10 +7,10 @@ import CategoriesList from './components/CategoriesList'
 import useActions from '../../hooks/useActions'
 
 const CategoriesPage: React.FC = () => {
-	const {getCategoriesList} = useActions()
+	const { getCategoriesList } = useActions()
 	const navigate = useNavigate()
-	const {categoryId} = useParams()
-	const {categories, loading} = useTypedSelector(state => state.categoriesList)
+	const { categoryId } = useParams()
+	const { categories, loading } = useTypedSelector(state => state.categoriesList)
 
 	useEffect(() => {
 		getCategoriesList()

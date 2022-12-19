@@ -1,4 +1,4 @@
-import { Navigate } from 'react-router-dom'
+import {Navigate} from 'react-router-dom'
 
 type GuardedRouteProps = {
     children: JSX.Element
@@ -6,7 +6,7 @@ type GuardedRouteProps = {
     permission?: 'auth' | 'notAuth'
 }
 
-const GuardedRoute = ({children, isAuth, permission = 'auth'}: GuardedRouteProps) => {
+const GuardedRoute = ({ children, isAuth, permission = 'auth' }: GuardedRouteProps) => {
 
 	if(!isAuth && permission === 'auth') return <Navigate to='/login' replace/>
 	if(isAuth && permission === 'notAuth') return <Navigate to='/dashboard' replace/>

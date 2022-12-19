@@ -4,7 +4,7 @@ import styles from '../../assets/styles/Pages/Form.module.scss'
 import {Button, TextField} from '@mui/material'
 
 const RestorePassword: React.FC = () => {
-	const {getFormFieldProps, onFormSubmit} = useFormInput({
+	const { getFormFieldProps, onFormSubmit } = useFormInput({
 		password: ''
 	})
 

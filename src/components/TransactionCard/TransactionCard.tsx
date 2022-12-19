@@ -7,7 +7,7 @@ type TransactionCardProps = {
     transaction: Transaction
 }
 
-const TransactionCard: React.FC<TransactionCardProps> = ({transaction}) => {
+const TransactionCard: React.FC<TransactionCardProps> = ({ transaction }) => {
 	return (
 		<div className={styles.transaction_card__wrap}>
 			<div

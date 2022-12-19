@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import image from  '@assets/images/404.png'
+import image from '@assets/images/404.png'
 
 const NotFound: React.FC = () => {
 	return (

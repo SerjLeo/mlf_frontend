@@ -10,7 +10,7 @@ import styles from './ProfileMenu.module.scss'
 const ProfileMenu: React.FC = () => {
 	const [ anchorEl, setAnchorEl ] = React.useState<null | HTMLElement>(null)
 	const open = Boolean(anchorEl)
-	const {signOut} = useActions()
+	const { signOut } = useActions()
 
 	const handleMenuOpen = (event: React.MouseEvent<HTMLButtonElement>) => {
 		setAnchorEl(event.currentTarget)

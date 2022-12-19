@@ -6,7 +6,7 @@ import useActions from './hooks/useActions'
 import Alert from '@components/Alert/Alert'
 
 const App: React.FC = () => {
-	const {checkoutAuthToken} = useActions()
+	const { checkoutAuthToken } = useActions()
 
 	useEffect(() => {
 		checkoutAuthToken()
