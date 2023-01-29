@@ -61,4 +61,4 @@ export type RemoveAlert = {
     }
 }
 
-export type AlertAction = NewInfo | NewError | NewSuccess | RemoveAlert
+export type AlertActions = NewInfo | NewError | NewSuccess | RemoveAlert

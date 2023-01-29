@@ -1,7 +1,8 @@
 import axios, { Method } from 'axios'
+import { isErrorResponse } from '@utils/TypeGuards'
 
 const apiInstance = axios.create({
-	baseURL: 'https://mlf.api.serjleodev.ru'
+	baseURL: 'http://localhost:9001/api'
 })
 
 apiInstance.interceptors.request.use ((config) => {
@@ -11,7 +12,8 @@ apiInstance.interceptors.request.use ((config) => {
 })
 
 export default class ApiService {
-	static async apiRequest(url: string, method: Method = 'GET', params: Record<string, unknown> = {}) {
+	static async apiRequest<T>(url: string, method: Method = 'GET', params: Record<string, unknown> = {})
+	: Promise<{ data?: T, error?: string }> {
 		try {
 			const response = await apiInstance({
 				method,
@@ -20,9 +22,9 @@ export default class ApiService {
 				params: method.toUpperCase() === 'GET' ? params : []
 			})
 			return response.data
-		} catch (e: unknown) {
-			// const error: ApiHTTPError = e
-			return { errors: e }
+		} catch (e: any) {
+			const errorMessage: string = e.response && e.response.data && isErrorResponse(e.response.data) && e.response.data.error || 'unknown error'
+			return { error: errorMessage }
 		}
 	}
 }

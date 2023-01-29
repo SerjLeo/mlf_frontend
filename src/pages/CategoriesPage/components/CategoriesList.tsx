@@ -19,8 +19,8 @@ const CategoriesList: React.FC<CategoriesListProps> = ({ categories, selectedId 
 		<div className={styles.categories__list}>
 			{
 				categories.map(category => <CategoryLabel
-					selected={selectedId === category.category_id}
-					key={category.category_id}
+					selected={selectedId === category.id}
+					key={category.id}
 					category={category}
 					onClick={onClick}/>)
 			}
@@ -28,7 +28,7 @@ const CategoriesList: React.FC<CategoriesListProps> = ({ categories, selectedId 
 				category={{
 					name: 'Add new',
 					color: 'red',
-					category_id: 0,
+					id: 0,
 					created_at: ''
 				}}
 				selected={false}

@@ -28,7 +28,10 @@ const Login: React.FC = () => {
 					<TextField label='email' {...getFormFieldProps('email')} required/>
 					<TextField label='password' type='password' {...getFormFieldProps('password')} required/>
 					<Button disabled={loading} type="submit">Login</Button>
-					<Link className={styles.form__redirect} to="/restore-password">Forgot password?</Link>
+					<div className={styles.formNavigation}>
+						<Link className={styles.form__redirect} to="/register">Sign Up</Link>
+						<Link className={styles.form__redirect} to="/restore-password">Forgot password?</Link>
+					</div>
 				</form>
 			</div>
 		</div>

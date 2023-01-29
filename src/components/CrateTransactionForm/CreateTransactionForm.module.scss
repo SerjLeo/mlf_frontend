@@ -13,18 +13,24 @@
   gap: 8px;
 }
 
-.form__inputs_group {
+.inputGroup {
   display: flex;
   gap: 12px;
 }
 
-.form__inputs_controls {
+.controls {
   display: flex;
   justify-content: space-between;
   gap: 12px;
+  margin-bottom: 12px;
 }
 
-.transaction__form__switch {
+.controlsLeft {
+  display: flex;
+  gap: 24px;
+}
+
+.switch {
   display: flex;
   align-items: center;
   width: max-content;
@@ -59,10 +65,10 @@
   opacity: 1;
 }
 
-.form__input_amount {
+.amountInput {
   flex-grow: 1;
 }
 
-.form__input_description {
+.descriptionInput {
   flex-grow: 3;
 }

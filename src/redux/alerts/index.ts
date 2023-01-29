@@ -1,10 +1,10 @@
-import { AlertAction, AlertActionTypes, AlertsState, AlertTypes } from './types'
-import UserStateFactory from './store'
+import { AlertActions, AlertActionTypes, AlertsState, AlertTypes } from './types'
+import AlertStateFactory from './store'
 import { v4 as uuidv4 } from 'uuid'
 
-const initialState: AlertsState = UserStateFactory()
+const initialState: AlertsState = AlertStateFactory()
 
-const alertReducer = (state = initialState, action: AlertAction): AlertsState => {
+const alertReducer = (state = initialState, action: AlertActions): AlertsState => {
 	switch (action.type) {
 	case AlertActionTypes.ERROR:
 		return {

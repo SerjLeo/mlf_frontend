@@ -25,6 +25,8 @@ export type CreateTransactionInputForm = {
     amount: number
     description?: string
     type: boolean
+    currency_id: number
+    account_id: number
     categories?: Category[]
 }
 

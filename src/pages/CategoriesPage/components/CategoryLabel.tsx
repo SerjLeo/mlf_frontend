@@ -10,7 +10,7 @@ type CategoryLabelProps = {
 
 const CategoryLabel: React.FC<CategoryLabelProps> = ({ category, selected, onClick }) => {
 	return (
-		<div onClick={() => onClick(category.category_id)} className={styles.category_label} style={{ backgroundColor: category.color, borderColor: selected ? 'black' : 'transparent' }}>
+		<div onClick={() => onClick(category.id)} className={styles.category_label} style={{ backgroundColor: category.color, borderColor: selected ? 'black' : 'transparent' }}>
 			{category.name}
 		</div>
 	)

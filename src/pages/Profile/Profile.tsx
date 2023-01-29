@@ -13,10 +13,10 @@ import useActions from '@hooks/useActions'
 const Profile: React.FC = () => {
 	const { user, loading } = useTypedSelector(state => state.user)
 
-	const { editProfile } = useActions()
+	// const { editProfile } = useActions()
 
 	const onNameChange = async (name: string | number) => {
-		await editProfile({ name: String(name) })
+		// await editProfile({ name: String(name) })
 		console.log(name)
 	}
 
@@ -61,7 +61,6 @@ const Profile: React.FC = () => {
 
 					<div className={styles.infoField}>
 						<div className={styles.infoFieldTitle}>Currency</div>
-						<div className={styles.infoFieldValue}>{Currencies[user.currency]} {user.currency}</div>
 					</div>
 				</div>
 			</div>

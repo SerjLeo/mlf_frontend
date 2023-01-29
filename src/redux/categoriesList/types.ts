@@ -7,7 +7,7 @@ export type CategoriesListState = {
 }
 
 export type Category = {
-    category_id: number
+    id: number
     name: string
     color: string
     created_at: string

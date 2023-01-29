@@ -1,3 +1,9 @@
 export type ApiHTTPError = {
-    errors: string
+    error: string
+    data: undefined
+}
+
+export type HTTPSuccessfulResponse<T> = {
+    data: T
+    error: undefined
 }
