@@ -1,7 +1,7 @@
 import { CategoryState } from './types'
 
 const CategoryStateFactory: () => CategoryState = () => ({
-	category_id: null,
+	id: null,
 	name: '',
 	color: '',
 	created_at: null,

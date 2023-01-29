@@ -1,34 +1,40 @@
-.header__wrap {
+.headerWrap {
   display: flex;
   justify-content: space-between;
   gap: 48px;
   padding-bottom: 12px;
 }
 
-.header__balance_item {
+.headerBalanceItem {
   display: flex;
 }
 
-.header__balance_icon {
+.headerBalanceIcon {
   margin-right: 12px;
 }
 
-.header__balance_info {
+.headerBalanceInfo {
 
 }
 
-.header__balance_title {
+.headerBalanceTitle {
   font-size: 14px;
   font-weight: 300;
   color: var(--color-dark-grey);
 }
 
-.header__balance_value {
+.headerBalanceValue {
   font-size: 24px;
   line-height: 36px;
   font-weight: 600;
 }
 
-.header__profile {
+.headerProfile {
   margin-left: auto;
+}
+
+.headerProfileSkeleton {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
 }

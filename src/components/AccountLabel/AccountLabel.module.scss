@@ -1,0 +1,44 @@
+.labelWrap {
+  display: flex;
+  position: relative;
+  width: max-content;
+  cursor: pointer;
+
+  &:hover > .labelHalo {
+    box-shadow: 0px 0px 5px 2px aquamarine;
+  }
+
+}
+
+.labelHalo {
+  position: absolute;
+  border-radius: 4px;
+  top: -6px;
+  left: -6px;
+  width: calc(100% + 12px);
+  height: calc(100% + 12px);
+  transition: box-shadow 0.3s ease;
+  z-index: -1;
+}
+
+.labelIcon {
+  margin-right: 8px;
+}
+
+.content {
+  padding-top: 6px;
+}
+
+.title {
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.amount {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--color-dark-grey);
+}
